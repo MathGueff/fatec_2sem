@@ -1,0 +1,2 @@
+--create database nomeBanco
+--use NomeDoBanco;
