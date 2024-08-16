@@ -1,3 +1,6 @@
+INSTALAÇÕES:
+npm install -g typescript
+
 const nome : tipo
 
 Para transpilar: tsc <nome>
