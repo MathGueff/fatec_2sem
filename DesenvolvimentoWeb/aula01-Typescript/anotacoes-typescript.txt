@@ -1,0 +1,18 @@
+INSTALAÇÕES:
+npm install -g typescript
+
+const nome : tipo
+
+Para transpilar: tsc <nome>
+Para rodar o js: node <nome>
+
+
+tsc -w (transpila todos os JS e funciona como LiveServer) -> para parar é CTRL C
+tsc --init (para criar o tsconfig)
+Descomentamos o "noEmitOnError": true no tsConfig
+
+LET e VAR
+
+Var é alterado independentemente do escopo
+Let é alterado conforme o escopo
+Se eu criar um let dentro de um if por exemplo, NAO VAI ALTERAR A VARIÁVEL ORIGINAL
