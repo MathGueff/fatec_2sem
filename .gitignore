@@ -189,3 +189,5 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node,windows
 /TecnicasDeProgramacao/Aula2/HelloWorld/target/
 /TecnicasDeProgramacao/Aula2/Calculadora/target/
+/TecnicasDeProgramacao/Aula3/ClasseTeste/target/
+/TecnicasDeProgramacao/Aula3/Classe_TesteX/target/

@@ -10,10 +10,12 @@ package com.mycompany.calculadora;
  */
 public class Calculadora {
     
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         String operacao;
         int x;
         int y;
+        boolean deuCerto;
+        deuCerto = true;
         
         int resultado;
         resultado = 0;
@@ -86,10 +88,12 @@ public class Calculadora {
             }
             default -> {
                 System.out.printf("Digite uma operação válida");
+                deuCerto = false;
             }
 
         }
-        System.out.printf("Resultado igual a %d%n", resultado);
-
+        if(deuCerto){
+            System.out.printf("Resultado igual a %d%n", resultado);
+        }
     }
 }
