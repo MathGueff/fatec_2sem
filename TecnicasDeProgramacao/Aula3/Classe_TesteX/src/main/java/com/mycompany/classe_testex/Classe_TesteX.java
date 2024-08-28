@@ -11,7 +11,10 @@ package com.mycompany.classe_testex;
 public class Classe_TesteX {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Classe_TesteX objeto = new Classe_TesteX(3);
+        System.out.printf("O resultado de %d * 2 e: %d ", objeto.getNumero() ,objeto.Dobro());
+        Classe_TesteX objeto2 = new Classe_TesteX(3,8);
+        System.out.printf("O resultado de %d * %d e: %d ", objeto2.getNumero(), objeto2.getNumero2() ,objeto2.Multiplica());
     }
     
     public Classe_TesteX(int numero1){
@@ -25,10 +28,11 @@ public class Classe_TesteX {
         this.numero2 = numero2;
     }
     
-    public int getNumero(int numero1){
+    public int getNumero(){
         return numero1;
     }
-    public int getNumero2(int numero2){
+    
+    public int getNumero2(){
         return numero2;
     }
     
@@ -45,7 +49,12 @@ public class Classe_TesteX {
     private int resultado;
     
     public int Dobro(){
-        resultado = getNumero(numero1) * 2;
+        resultado = getNumero() * 2;
+        return resultado;
+    }
+    
+    public int Multiplica(){
+        resultado = getNumero() * getNumero2();
         return resultado;
     }
     
