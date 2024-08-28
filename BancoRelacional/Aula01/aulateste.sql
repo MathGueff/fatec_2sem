@@ -1,6 +1,6 @@
 --create database nomeBanco
-use NomeDoBanco;
-
+use aula01;
+go
 Create table Cliente
 (
 	Cod_Cli int not null,
@@ -12,3 +12,9 @@ Create table Cliente
 	Tel_Cli varchar(15) null,
 	Constraint PK_Cliente Primary Key(Cod_Cli)
 )
+
+Create table Cidade(
+	CodCidade varchar(2) not null,
+	NomeCidade varchar(40)
+)
+
