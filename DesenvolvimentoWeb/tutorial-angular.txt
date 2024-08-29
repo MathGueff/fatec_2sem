@@ -1,0 +1,8 @@
+COMO INSTALAR ANGULAR
+
+-> npm i -g @angular/cli
+
+COMO USAR O ANGULAR
+
+Criando novo projeto
+-> ng new (nome do projeto)

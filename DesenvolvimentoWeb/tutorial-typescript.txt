@@ -1,0 +1,15 @@
+AULA DE DESENVOLVIMENTO WEB
+
+TUDO QUE DEVEMOS INSTALAR:
+
+-> npm i -g typescript
+-> npm i prompt-sync
+
+PARA TRANSPILAR (TS PARA JS)
+
+-> TSC (nome do arquivo)
+-> TSC -W (inclui todos os arquivos)
+
+PARA EXECUTAR:
+
+-> NODE (nome do arquivo)
