@@ -6,3 +6,9 @@ COMO USAR O ANGULAR
 
 Criando novo projeto
 -> ng new (nome do projeto)
+
+Abrindo um servidor
+-> ng serve --open (o open serve para abrir automaticamente) [serve praticamente como um liveserver]
+
+Criando um novo component 
+-> ng g component (pasta/nome do arquivo)
