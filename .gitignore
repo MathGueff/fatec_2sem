@@ -228,3 +228,5 @@ e2e/*.map
 .DS_Store/
 
 # End of https://www.toptal.com/developers/gitignore/api/angular
+/TecnicasDeProgramacao/Aula4/CalculadoraJava/target/
+/TecnicasDeProgramacao/Aula4/SequenciaFibonacci/target/
