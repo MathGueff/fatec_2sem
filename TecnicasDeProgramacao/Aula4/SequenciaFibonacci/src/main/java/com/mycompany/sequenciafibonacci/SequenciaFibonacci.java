@@ -15,12 +15,24 @@ public class SequenciaFibonacci {
         System.out.println("Digite um número: ");
         numero = Integer.parseInt(System.console().readLine());
         System.out.println("Calculando a sequência de fibonnaci do número" + numero);
-        System.out.println(fibonacci(numero));
+        SequenciaFibonacci fibo = new SequenciaFibonacci();
+        for(int i=0; i<numero; i++){
+            System.out.println(i+1 +" termo da sequencia de fibonacci: " + fibo.SequenciaFibonacci(i));
+        }
     }
     
-    public static int fibonacci(int n)  {
-        if (n < 2) return n;
-        System.out.println(n);
-        return fibonacci(n - 1) + fibonacci(n - 2);
+    public int t1 = 0;
+    public int t2 = 1;
+    
+    public int SequenciaFibonacci(int n)  {
+        int resultado = 0;
+        if(n < 2){
+            resultado = n;
+        }
+        else{
+            resultado = SequenciaFibonacci(n-1) + SequenciaFibonacci(n-2);
+        }
+        //System.out.println(resultado);
+        return resultado;
     }
 }
