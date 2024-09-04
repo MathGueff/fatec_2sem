@@ -12,9 +12,11 @@ public class SequenciaFibonacci {
 
     public static void main(String[] args) {
         int numero;
-        System.out.println("Digite um número: ");
-        numero = Integer.parseInt(System.console().readLine());
-        System.out.println("Calculando a sequência de fibonnaci do número" + numero);
+        do{
+            System.out.println("Digite um numero: ");
+            numero = Integer.parseInt(System.console().readLine());
+        } while (numero < 0);
+        System.out.println("Calculando a sequencia de fibonnaci do numero: " + numero);
         SequenciaFibonacci fibo = new SequenciaFibonacci();
         for(int i=0; i<numero; i++){
             System.out.println(i+1 +" termo da sequencia de fibonacci: " + fibo.SequenciaFibonacci(i));
@@ -32,7 +34,6 @@ public class SequenciaFibonacci {
         else{
             resultado = SequenciaFibonacci(n-1) + SequenciaFibonacci(n-2);
         }
-        //System.out.println(resultado);
         return resultado;
     }
 }
