@@ -10,6 +10,7 @@
     width: 75px;
     border: 1px dashed black;
     border-radius: 100%;
+    cursor: pointer;
 }
 
 .menuusuario{
