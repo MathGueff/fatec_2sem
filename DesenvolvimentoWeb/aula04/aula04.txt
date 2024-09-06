@@ -1,0 +1,4 @@
+FAZENDO O HEADER E NAVBAR:
+
+Instalamos o bootstrap, para referenciar ele no código, é necessário adicionar a linha no array scripts[] do arquivo angular.json
+Vamos utilizar a diretiva@ngif para controlar os componentes

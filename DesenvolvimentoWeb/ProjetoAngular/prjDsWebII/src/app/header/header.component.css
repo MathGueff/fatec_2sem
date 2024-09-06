@@ -1,4 +1,29 @@
-p{
-    color: blue;
-    background-color: #313131;
+.titulosite{
+  font-size: 40px;
+  font-weight: bold;
+  height: 112px;
+  border-bottom: 1px dashed #d0d0d0;
+  padding: 32px;
+}
+
+#img-header{
+    width: 75px;
+    border: 1px dashed black;
+    border-radius: 100%;
+}
+
+.menuusuario{
+    position: absolute;
+    right: 32px;
+    top: 70px;
+    z-index: 1;
+}
+
+.itemclicavel{
+    font-weight: bold;
+}
+
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
 }

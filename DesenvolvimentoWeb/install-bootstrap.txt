@@ -1,0 +1,9 @@
+TUTORIAL INSTALAR BOOTSTRAP
+
+- npm i bootstrap@4.1.3jquery@3.3.1popper.js@1.14.3 --save (especificando a versão)
+
+OU 
+ 
+- npm i bootstrap --save (Caso queira pegar a versão mais atual)
+- npm i jquery --save
+- npm i popper --save
