@@ -230,3 +230,6 @@ e2e/*.map
 # End of https://www.toptal.com/developers/gitignore/api/angular
 /TecnicasDeProgramacao/Aula4/CalculadoraJava/target/
 /TecnicasDeProgramacao/Aula4/SequenciaFibonacci/target/
+/TecnicasDeProgramacao/Aula5/Veiculos/target/
+/TecnicasDeProgramacao/Aula5/Heranca/target/
+/TecnicasDeProgramacao/Aula5/Exemplo/target/
