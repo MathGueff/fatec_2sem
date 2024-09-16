@@ -15,6 +15,8 @@ public class ExerciciosEstruturaDeDados {
         int[] a = {1,2,3,4,5};
         int n = a.length;
         int max = 200;
+        System.out.println("Digite o valor de x: ");
+        x = Integer.parseInt(System.console().readLine());
         //Ex01
         System.out.printf("A quantidade de valores maiores do que %d igual a %d \n", x, ContaValor(x,a,n));
         //Ex02
