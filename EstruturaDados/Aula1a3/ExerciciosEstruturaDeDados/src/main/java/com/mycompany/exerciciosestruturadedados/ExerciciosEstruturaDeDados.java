@@ -11,31 +11,67 @@ package com.mycompany.exerciciosestruturadedados;
 public class ExerciciosEstruturaDeDados {
 
     public static void main(String[] args) {
-        int x = 2;
-        int[] a = {1,2,3,4,5};
+        
+        int qtdNumeros;
+        System.out.printf("Digite uma quantidade de numeros para o array: ");
+        qtdNumeros = Integer.parseInt(System.console().readLine());
+        linhaFormatada();
+        int[] a = new int[qtdNumeros];
         int n = a.length;
-        int max = 200;
-        System.out.println("Digite o valor de x: ");
+        int max;
+        // Valores do Array
+        for(int i=0; i<qtdNumeros; i++){
+            int num;
+            System.out.printf("Digite o numero %d: ", i+1);
+            num = Integer.parseInt(System.console().readLine());
+            a[i] = num;
+        }
+        linhaFormatada();
+        // Valor máximo para o exercício 4
+        System.out.printf("Digite o valor maximo: ");
+        max = Integer.parseInt(System.console().readLine());
+        linhaFormatada();
+        int x;
+        System.out.printf("Digite o valor de x: ");
         x = Integer.parseInt(System.console().readLine());
+        linhaFormatada();
+        
+        System.out.println("\n========EXERCICIOS========\n");
+        System.out.printf("Array: ");
+         for(int i = 0; i<a.length;i++){
+            System.out.printf("%d ", a[i]);
+        }
+        System.out.println("\n");
+        linhaFormatada();
+         
         //Ex01
         System.out.printf("A quantidade de valores maiores do que %d igual a %d \n", x, ContaValor(x,a,n));
+        linhaFormatada();
         //Ex02
         System.out.printf("Soma de todos valores ate encontrar um valor menor que %d igual a %d \n", x, SomaArray(x, a, n));
+        linhaFormatada();
         //Ex03
         System.out.printf("Calculando a quantidade de numeros pares no array igual a %d \n", ParArray(x, a, n));
+        linhaFormatada();
         //Ex04
         System.out.printf("Multiplicando %d por 2 ate ultrapassar o maximo %d \n", x, max);
+        linhaFormatada();
         MultiplicaMax(x, max);
         //Ex05
         System.out.printf("O menor valor dentro do array igual a %d \n", MenorNumero(x, a, n));
+        linhaFormatada();
         //Ex06
         System.out.printf("Verificando se o valor %d esta presente no array: %s \n", x, EncontrarNumero(x, a, n));
+        linhaFormatada();
         //Ex07
         System.out.printf("Calculando o fatorial de %d: %d\n", x, CalcularFatorial(x));
+        linhaFormatada();
         //Ex08
         System.out.printf("A quantidade de valores maiores do que a media no array igual a %d \n", MaioresQueMedia(a, n));
+        linhaFormatada();
         //Ex09
         System.out.printf("A quantidade de numeros divisiveis por %d no array igual a %d\n", x, ContaDivisoes(x, a, n));
+        linhaFormatada();
         //Ex10
         System.out.printf("Retornando array invertido:\n");
         int[] invertido  = InverteArray(a, n);
@@ -144,12 +180,16 @@ public class ExerciciosEstruturaDeDados {
     }
     
     public static int[] InverteArray(int[] a, int n){
-        int[] invertido = {0,0,0,0,0};
+        int[] invertido = new int[n];
         int j = 0;
         for(int i = n-1; i>=0; i--){
             invertido[j] = a[i];
             j++;
         }
         return invertido;
+    }
+    
+    public static void linhaFormatada(){
+        System.out.println("------------");
     }
 }
