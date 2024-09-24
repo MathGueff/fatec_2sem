@@ -4,6 +4,8 @@
  */
 package com.mycompany.banco;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alunos
@@ -12,20 +14,20 @@ public class Cliente {
     
     private int id_cli;
     private String nome;
-    private char cpf;
+    private String cpf;
     private String endereco;
     private String numero;
     private String bairro;
     private String cidade;
-    private char uf;
-    private char cep;
+    private String uf;
+    private String cep;
     private String email;
     private boolean status;
     private String telefone;
-    private char cnpj;
+    private String cnpj;
     private char sexo;
 
-    public Cliente(int id_cli, String nome, char cpf, String endereco, String numero, String bairro, String cidade, char uf, char cep, String email, String telefone, char cnpj, char sexo) {
+    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo) {
         this.id_cli = id_cli;
         this.nome = nome;
         this.cpf = cpf;
@@ -47,7 +49,15 @@ public class Cliente {
     }
 
     public void setId_cli(int id_cli) {
-        this.id_cli = id_cli;
+        if(isStatus()){
+            if(id_cli == 0){
+                JOptionPane.showMessageDialog(null, "O id não pode ser 0");
+            }
+            this.id_cli = id_cli;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir um ID a conta deve estar aberta");
+        }
     }
 
     public String getNome() {
@@ -55,15 +65,25 @@ public class Cliente {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(isStatus()){
+            this.nome = nome;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o nome a conta deve estar aberta");
+        }
     }
 
-    public char getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(char cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cpf) {
+        if(isStatus()){
+            this.cpf = cpf;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o cpf a conta deve estar aberta");
+        }
     }
 
     public String getEndereco() {
@@ -71,7 +91,12 @@ public class Cliente {
     }
 
     public void setEndereco(String endereco) {
-        this.endereco = endereco;
+        if(isStatus()){
+            this.endereco = endereco;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o endereco a conta deve estar aberta");
+        }
     }
 
     public String getNumero() {
@@ -79,7 +104,12 @@ public class Cliente {
     }
 
     public void setNumero(String numero) {
-        this.numero = numero;
+        if(isStatus()){
+            this.numero = numero;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o numero a conta deve estar aberta");
+        }
     }
 
     public String getBairro() {
@@ -87,7 +117,12 @@ public class Cliente {
     }
 
     public void setBairro(String bairro) {
-        this.bairro = bairro;
+        if(isStatus()){
+            this.bairro = bairro;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o bairro a conta deve estar aberta");
+        }
     }
 
     public String getCidade() {
@@ -95,23 +130,38 @@ public class Cliente {
     }
 
     public void setCidade(String cidade) {
-        this.cidade = cidade;
+        if(isStatus()){
+            this.cidade = cidade;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir a cidade a conta deve estar aberta");
+        }
     }
 
-    public char getUf() {
+    public String getUf() {
         return uf;
     }
 
-    public void setUf(char uf) {
-        this.uf = uf;
+    public void setUf(String uf) {
+        if(isStatus()){
+            this.uf = uf;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o uf a conta deve estar aberta");
+        }
     }
 
-    public char getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(char cep) {
-        this.cep = cep;
+    public void setCep(String cep) {
+        if(isStatus()){
+            this.cep = cep;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o cep a conta deve estar aberta");
+        }
     }
 
     public String getEmail() {
@@ -119,7 +169,12 @@ public class Cliente {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if(isStatus()){
+            this.email = email;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o email a conta deve estar aberta");
+        }
     }
 
     public boolean isStatus() {
@@ -135,15 +190,25 @@ public class Cliente {
     }
 
     public void setTelefone(String telefone) {
-        this.telefone = telefone;
+        if(isStatus()){
+            this.telefone = telefone;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o telefone a conta deve estar aberta");
+        }
     }
 
-    public char getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(char cnpj) {
-        this.cnpj = cnpj;
+    public void setCnpj(String cnpj) {
+        if(isStatus()){
+            this.cnpj = cnpj;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o cnpj a conta deve estar aberta");
+        }
     }
 
     public char getSexo() {
@@ -151,8 +216,11 @@ public class Cliente {
     }
 
     public void setSexo(char sexo) {
-        this.sexo = sexo;
+       if(isStatus()){
+            this.sexo = sexo;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o sexo a conta deve estar aberta");
+        }
     }
-    
-    
 }

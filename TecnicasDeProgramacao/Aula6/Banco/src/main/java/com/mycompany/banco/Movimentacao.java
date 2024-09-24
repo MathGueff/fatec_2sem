@@ -5,23 +5,24 @@
 package com.mycompany.banco;
 
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Alunos
  */
 public class Movimentacao {
-    private char num_conta;
-    private char num_age;
-    private char documento;
+    private String num_conta;
+    private String num_age;
+    private String documento;
     private String data_mov;
-    private char creditoDebito;
+    private String creditoDebito;
     private int id_his;
     private String compl_hist;
     private double valor;
     private double saldo;
 
-    public Movimentacao(char num_conta, char num_age, char documento, String data_mov, char creditoDebito, int id_his, String compl_hist, double valor, double saldo) {
+    public Movimentacao(String num_conta, String num_age, String documento, String data_mov, String creditoDebito, int id_his, String compl_hist, double valor, double saldo) {
         this.num_conta = num_conta;
         this.num_age = num_age;
         this.documento = documento;
@@ -33,27 +34,37 @@ public class Movimentacao {
         this.saldo = saldo;
     }
 
-    public char getNum_conta() {
+    public String getNum_conta() {
         return num_conta;
     }
 
-    public void setNum_conta(char num_conta) {
-        this.num_conta = num_conta;
+    public void setNum_conta(String num_conta) {
+        if(num_conta == null){
+            JOptionPane.showMessageDialog(null, "Número da conta não pode ser vazio");
+        }
+        else{
+            this.num_conta = num_conta;
+        }
     }
 
-    public char getNum_age() {
+    public String getNum_age() {
         return num_age;
     }
 
-    public void setNum_age(char num_age) {
-        this.num_age = num_age;
+    public void setNum_age(String num_age) {
+        if(num_age == null){
+            JOptionPane.showMessageDialog(null, "Número da agência não pode ser vazio");
+        }
+        else{
+            this.num_age = num_age;
+        }
     }
 
-    public char getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(char documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
@@ -62,15 +73,25 @@ public class Movimentacao {
     }
 
     public void setData_mov(String data_mov) {
-        this.data_mov = data_mov;
+        if(data_mov == null){
+            JOptionPane.showMessageDialog(null, "Data da movimentação não pode ser vazio");
+        }
+        else{
+            this.data_mov = data_mov;
+        }
     }
 
-    public char getCreditoDebito() {
+    public String getCreditoDebito() {
         return creditoDebito;
     }
 
-    public void setCreditoDebito(char creditoDebito) {
-        this.creditoDebito = creditoDebito;
+    public void setCreditoDebito(String creditoDebito) {
+        if(num_conta == null){
+            JOptionPane.showMessageDialog(null, "Cartão não pode ser vazio");
+        }
+        else{
+            this.creditoDebito = creditoDebito;
+        }
     }
 
     public int getId_his() {
@@ -78,7 +99,12 @@ public class Movimentacao {
     }
 
     public void setId_his(int id_his) {
-        this.id_his = id_his;
+        if(id_his == 0){
+            JOptionPane.showMessageDialog(null, "Numero do histórico não pode ser vazio");
+        }
+        else{
+            this.id_his = id_his;
+        }
     }
 
     public String getCompl_hist() {
@@ -94,7 +120,12 @@ public class Movimentacao {
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        if(valor == 0){
+            JOptionPane.showMessageDialog(null, "Saldo não pode ser vazio");
+        }
+        else{
+            this.valor = valor;
+        }
     }
 
     public double getSaldo() {
@@ -102,7 +133,11 @@ public class Movimentacao {
     }
 
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        if(saldo == 0){
+            JOptionPane.showMessageDialog(null, "Saldo não pode ser vazio");
+        }
+        else{
+            this.saldo = saldo;
+        }
     }
-    
 }

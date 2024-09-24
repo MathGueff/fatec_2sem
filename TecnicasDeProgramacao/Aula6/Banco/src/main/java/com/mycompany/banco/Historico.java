@@ -4,6 +4,8 @@
  */
 package com.mycompany.banco;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alunos
@@ -22,7 +24,12 @@ public class Historico {
     }
 
     public void setId_his(int id_his) {
-        this.id_his = id_his;
+        if(id_his == 0){
+            JOptionPane.showMessageDialog(null, "Número do histórico não pode ser vazio");
+        }
+        else{
+            this.id_his = id_his;
+        }
     }
 
     public String getHistorico() {
@@ -30,8 +37,11 @@ public class Historico {
     }
 
     public void setHistorico(String historico) {
-        this.historico = historico;
+        if(historico == null){
+            JOptionPane.showMessageDialog(null, "Histórico não pode ser vazio");
+        }
+        else{
+            this.historico = historico;
+        }
     }
-    
-    
 }

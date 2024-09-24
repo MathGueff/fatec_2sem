@@ -4,24 +4,26 @@
  */
 package com.mycompany.banco;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alunos
  */
 public class Agencia {
-    private char num_agencia;
+    private String num_agencia;
     private String nome;
     private String endereco;
     private String numero;
     private String complemento;
     private String bairro;
     private String cidade;
-    private char uf;
-    private char cep;
-    private char cnpj;
+    private String uf;
+    private String cep;
+    private String cnpj;
     private String gerente;
 
-    public Agencia(char num_agencia, String nome, String endereco, String numero, String complemento, String bairro, String cidade, char uf, char cep, char cnpj, String gerente) {
+    public Agencia(String num_agencia, String nome, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String cnpj, String gerente) {
         this.num_agencia = num_agencia;
         this.nome = nome;
         this.endereco = endereco;
@@ -34,13 +36,24 @@ public class Agencia {
         this.cnpj = cnpj;
         this.gerente = gerente;
     }
+    
+    public boolean ValidaNomeAgencia(){
+        if(nome == null)
+            return false;
+        return true;
+    }
 
-    public char getNum_agencia() {
+    public String getNum_agencia() {
         return num_agencia;
     }
 
-    public void setNum_agencia(char num_agencia) {
-        this.num_agencia = num_agencia;
+    public void setNum_agencia(String num_agencia) {
+        if(num_agencia == null){
+             JOptionPane.showMessageDialog(null, "Número da agência inválido");
+        }
+        else{
+            this.num_agencia = num_agencia;
+        }
     }
 
     public String getNome() {
@@ -48,7 +61,12 @@ public class Agencia {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(nome == null){
+             JOptionPane.showMessageDialog(null, "Nome não pode ser vazio");
+        }
+        else{
+            this.nome = nome;
+        }
     }
 
     public String getEndereco() {
@@ -56,7 +74,12 @@ public class Agencia {
     }
 
     public void setEndereco(String endereco) {
-        this.endereco = endereco;
+        if(endereco == null){
+            JOptionPane.showMessageDialog(null, "O endereço não pode ser vazio");
+        }
+        else{
+            this.endereco = endereco;
+        }
     }
 
     public String getNumero() {
@@ -91,27 +114,27 @@ public class Agencia {
         this.cidade = cidade;
     }
 
-    public char getUf() {
+    public String getUf() {
         return uf;
     }
 
-    public void setUf(char uf) {
+    public void setUf(String uf) {
         this.uf = uf;
     }
 
-    public char getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(char cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
-    public char getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(char cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
