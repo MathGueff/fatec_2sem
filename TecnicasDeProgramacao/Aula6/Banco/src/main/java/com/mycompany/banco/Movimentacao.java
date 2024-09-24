@@ -86,7 +86,7 @@ public class Movimentacao {
     }
 
     public void setCreditoDebito(String creditoDebito) {
-        if(num_conta == null){
+        if(creditoDebito == null){
             JOptionPane.showMessageDialog(null, "Cartão não pode ser vazio");
         }
         else{
@@ -121,7 +121,7 @@ public class Movimentacao {
 
     public void setValor(double valor) {
         if(valor == 0){
-            JOptionPane.showMessageDialog(null, "Saldo não pode ser vazio");
+            JOptionPane.showMessageDialog(null, "Valor não pode ser vazio");
         }
         else{
             this.valor = valor;

@@ -54,7 +54,7 @@ public class ContaCorrente{
 
     public void setId_cli(int id_cli) {
         if(id_cli == 0){
-            JOptionPane.showMessageDialog(null, "Número da agência não pode ser vazio");
+            JOptionPane.showMessageDialog(null, "Número do cliente não pode ser vazio");
         }
         else{
             this.id_cli = id_cli;

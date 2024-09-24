@@ -29,5 +29,25 @@ public class Banco {
         //cli.setStatus(true);
         //cli.setNome("Nicolas");
         //System.out.println(cli.getNome());
+        
+        //ContaCorrente cc = new ContaCorrente("num_conta", "num_agencia", 0, 0);
+        //cc.setNum_agencia(null);
+        //cc.setNum_conta(null);
+        //cc.setId_cli(0);
+        
+        //Movimentacao m = new Movimentacao("num_conta", "num_age", "documento", "data_mov", "creditoDebito", 0, "compl_hist", 0, 0);
+        //m.setCreditoDebito(null);
+        //m.setData_mov(null);
+        //m.setId_his(0);
+        //m.setValor(0);
+        //m.setSaldo(0);
+        //m.setNum_age(null);
+        //m.setNum_conta(null);
+        
+        Usuario u = new Usuario("a", "111", 0, 0);
+        u.setNum_agencia(0);
+        u.setLogin(null);
+        u.setSenha(null);
+        u.setId_cli(0);
     }
 }

@@ -49,7 +49,7 @@ public class Agencia {
 
     public void setNum_agencia(String num_agencia) {
         if(num_agencia == null){
-             JOptionPane.showMessageDialog(null, "Número da agência inválido");
+            JOptionPane.showMessageDialog(null, "Número da agência inválido");
         }
         else{
             this.num_agencia = num_agencia;
