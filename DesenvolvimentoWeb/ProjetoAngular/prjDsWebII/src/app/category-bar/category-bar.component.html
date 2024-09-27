@@ -1,0 +1,13 @@
+<div class="background">
+  <ul class="list-group">
+    <li class="card-category" *ngFor="let category of categories">
+      <div class="card-img">
+        <img src="{{category.image}}" alt="user-image">
+      </div>
+      <div class="card-info">
+        <span>{{category.title}}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+

@@ -2,7 +2,7 @@ use FBD;
 
 -- CRIAÇÃO DAS TABELAS CIDADE E EMPREGADO
 
-create table Cidade 
+create table Cidade(
 	Codcidade int identity (1,1) not null primary key,
 	Nomecidade varchar(40),
 	cdestado varchar(2)

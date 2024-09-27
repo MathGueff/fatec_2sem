@@ -1,0 +1,16 @@
+<div class="background">
+  <div class="courses-cards">
+    <div class="card course-card" style="width: 18rem;" *ngFor="let course of courses">
+      <img src="{{course.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{course.title}}</h5>
+        <p class="card-text">{{course.description}}</p>
+        <p class="card-text">Preço: R${{course.cost}}</p>
+        <p class="card-text">Duração do curso: {{course.duration}} {{course.duration > 1 ? 'horas' : 'hora'}}</p>
+        <a href="#" class="btn btn-primary">Saiba +</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
