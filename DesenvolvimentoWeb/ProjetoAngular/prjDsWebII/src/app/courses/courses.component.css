@@ -1,5 +1,5 @@
 .background{
-  background-color: rgb(234, 235, 237);
+  background-color: var(--background);
 }
 
 .courses-cards{

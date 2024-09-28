@@ -12,6 +12,7 @@
     border: 1px dashed black;
     border-radius: 100%;
     cursor: pointer;
+    object-fit: cover;
 }
 
 .menuusuario{
@@ -22,7 +23,7 @@
 }
 
 .itemclicavel{
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .row{
