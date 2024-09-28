@@ -4,6 +4,8 @@
  */
 package com.mycompany.banco;
 
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,20 +38,19 @@ public class Agencia {
         this.cnpj = cnpj;
         this.gerente = gerente;
     }
-    
-    public boolean ValidaNomeAgencia(){
-        if(nome == null)
-            return false;
-        return true;
-    }
 
     public String getNum_agencia() {
         return num_agencia;
     }
 
     public void setNum_agencia(String num_agencia) {
-        if(num_agencia == null){
-            JOptionPane.showMessageDialog(null, "Número da agência inválido");
+        if(num_agencia.isBlank())
+        {
+            JOptionPane.showMessageDialog(null, "Número da agência não pode ser branco");
+        }
+        else if(num_agencia.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Número da agência não pode ser nulo");
         }
         else{
             this.num_agencia = num_agencia;
@@ -61,8 +62,13 @@ public class Agencia {
     }
 
     public void setNome(String nome) {
-        if(nome == null){
-             JOptionPane.showMessageDialog(null, "Nome não pode ser vazio");
+         if(nome.isBlank())
+        {
+            JOptionPane.showMessageDialog(null, "Nome não pode ser branco");
+        }
+        else if(nome.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Nome não pode ser nulo");
         }
         else{
             this.nome = nome;
@@ -74,8 +80,13 @@ public class Agencia {
     }
 
     public void setEndereco(String endereco) {
-        if(endereco == null){
-            JOptionPane.showMessageDialog(null, "O endereço não pode ser vazio");
+         if(endereco.isBlank())
+        {
+            JOptionPane.showMessageDialog(null, "Endereço não pode ser branco");
+        }
+        else if(endereco.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Endereço não pode ser nulo");
         }
         else{
             this.endereco = endereco;
@@ -119,7 +130,55 @@ public class Agencia {
     }
 
     public void setUf(String uf) {
-        this.uf = uf;
+        uf = uf.trim();
+        uf = uf.toUpperCase();
+        String[] estados = {
+            "AC", // Acre
+            "AL", // Alagoas
+            "AP", // Amapá
+            "AM", // Amazonas
+            "BA", // Bahia
+            "CE", // Ceará
+            "DF", // Distrito Federal
+            "ES", // Espírito Santo
+            "GO", // Goiás
+            "MA", // Maranhão
+            "MT", // Mato Grosso
+            "MS", // Mato Grosso do Sul
+            "MG", // Minas Gerais
+            "PA", // Pará
+            "PB", // Paraíba
+            "PR", // Paraná
+            "PE", // Pernambuco
+            "PI", // Piauí
+            "RJ", // Rio de Janeiro
+            "RN", // Rio Grande do Norte
+            "RS", // Rio Grande do Sul
+            "RO", // Rondônia
+            "RR", // Roraima
+            "SC", // Santa Catarina
+            "SP", // São Paulo
+            "SE", // Sergipe
+            "TO"  // Tocantins
+        };
+        
+        List<String> estadosList = Arrays.asList(estados);
+        
+        /*
+            Validação do campo
+        */
+        if(uf.isBlank())
+        {
+            JOptionPane.showMessageDialog(null, "Estado não pode ser branco");
+        }
+        else if(uf.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Estado não pode ser nulo");
+        }
+        else if(!estadosList.contains(uf))
+        {
+            JOptionPane.showMessageDialog(null, "Estado inválido");
+        }
     }
 
     public String getCep() {

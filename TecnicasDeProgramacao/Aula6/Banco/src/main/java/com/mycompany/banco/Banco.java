@@ -21,13 +21,21 @@ public class Banco {
         //Historico h = new Historico(0, "historico");
         //h.setId_his(0);
         
-        //Cliente cli = new Cliente(0, "nome", "0", "endereco", "numero", "bairro", "cidade", "0", "0", "email", "telefone", "0", '0');
-        //cli.setId_cli(0);
+        Cliente cli = new Cliente(0, "nome", "0", "endereco", "numero", "bairro", "cidade", "0", "0", "email", "telefone", "0", '0');
+        //cli.setId_cli(1);
+        //System.out.println(cli.getId_cli());
         //cli.setStatus(false);
         //cli.setNome("aaaa");
         //cli.setCidade("Cidae");
         //cli.setStatus(true);
         //cli.setNome("Nicolas");
+        //cli.setEndereco("");
+        //cli.setEmail("a@b.c");
+        //System.out.println(cli.getEmail());
+        //cli.setEmail("           @.    ");
+        //System.out.println(cli.getEmail());
+        //cli.setSexo('T');
+        //cli.setUf("100");
         //System.out.println(cli.getNome());
         
         //ContaCorrente cc = new ContaCorrente("num_conta", "num_agencia", 0, 0);
@@ -44,10 +52,10 @@ public class Banco {
         //m.setNum_age(null);
         //m.setNum_conta(null);
         
-        Usuario u = new Usuario("a", "111", 0, 0);
-        u.setNum_agencia(0);
-        u.setLogin(null);
-        u.setSenha(null);
-        u.setId_cli(0);
+        //Usuario u = new Usuario("a", "111", 0, 0);
+        //u.setNum_agencia(0);
+        //u.setLogin(null);
+        //u.setSenha(null);
+        //u.setId_cli(0);
     }
 }
