@@ -5,6 +5,9 @@
 
 package com.mycompany.banco;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author Alunos
@@ -59,3 +62,4 @@ public class Banco {
         //u.setId_cli(0);
     }
 }
+

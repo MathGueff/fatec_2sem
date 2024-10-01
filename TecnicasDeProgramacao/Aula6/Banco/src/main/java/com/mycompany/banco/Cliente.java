@@ -29,6 +29,11 @@ public class Cliente {
     private String telefone;
     private String cnpj;
     private char sexo;
+    
+    public Cliente(){
+        this.status = true;
+        //Construtor vazio para criação livre
+    }
 
     public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo) {
         this.id_cli = id_cli;

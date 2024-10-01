@@ -24,6 +24,10 @@ public class Agencia {
     private String cep;
     private String cnpj;
     private String gerente;
+    
+    public Agencia(){
+        //Construtor vazio para o objeto Agencia
+    }
 
     public Agencia(String num_agencia, String nome, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String cnpj, String gerente) {
         this.num_agencia = num_agencia;
