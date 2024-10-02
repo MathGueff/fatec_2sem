@@ -264,6 +264,9 @@ public class Agencias extends javax.swing.JFrame {
         agencia_jframe.setCnpj(txtField_cnpj.getText());
         agencia_jframe.setGerente(txtField_gerente.getText());
         agencia_jframe.setUf(combo_uf.getSelectedItem().toString());
+        JOptionPane.showMessageDialog(null, "Parabens, você se cadastrou");
+        JOptionPane.showMessageDialog(null, "Teste: " + combo_uf.getSelectedItem().toString());
+        btn_LimparActionPerformed(evt);
     }//GEN-LAST:event_btn_GravarActionPerformed
 
     private void btn_LerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LerActionPerformed

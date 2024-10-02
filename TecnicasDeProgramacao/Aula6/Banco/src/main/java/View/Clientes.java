@@ -19,7 +19,7 @@ public class Clientes extends javax.swing.JFrame {
     }
     
     Cliente c = new Cliente();
-
+    char sexoSelecionado = ' ';
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +50,11 @@ public class Clientes extends javax.swing.JFrame {
         lbl_Cpf_Cnpj = new javax.swing.JLabel();
         txtField_Cpf_Cpnj = new javax.swing.JTextField();
         btn_Limpar = new javax.swing.JButton();
+        lbl_sexo = new javax.swing.JLabel();
+        lbl_uf = new javax.swing.JLabel();
+        combo_estado = new javax.swing.JComboBox<>();
+        radio_sexo_f = new javax.swing.JRadioButton();
+        radio_sexo_m = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -65,11 +70,6 @@ public class Clientes extends javax.swing.JFrame {
 
         textField_Cliente.setBackground(new java.awt.Color(204, 204, 204));
         textField_Cliente.setForeground(new java.awt.Color(51, 51, 51));
-        textField_Cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_ClienteActionPerformed(evt);
-            }
-        });
 
         textField_Endereco.setBackground(new java.awt.Color(204, 204, 204));
         textField_Endereco.setForeground(new java.awt.Color(51, 51, 51));
@@ -141,6 +141,28 @@ public class Clientes extends javax.swing.JFrame {
             }
         });
 
+        lbl_sexo.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_sexo.setText("Sexo");
+
+        lbl_uf.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_uf.setText("Estado do Cliente");
+
+        combo_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+
+        radio_sexo_f.setText("F");
+        radio_sexo_f.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_sexo_fActionPerformed(evt);
+            }
+        });
+
+        radio_sexo_m.setText("M");
+        radio_sexo_m.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_sexo_mActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,17 +175,19 @@ public class Clientes extends javax.swing.JFrame {
                         .addGap(90, 90, 90)
                         .addComponent(btn_Limpar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl_Cliente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Endereco, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Numero, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Bairro, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Cidade, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Cep, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Email, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Cpf_Cnpj, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Telefone, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_Cliente)
+                            .addComponent(lbl_Endereco)
+                            .addComponent(lbl_Numero)
+                            .addComponent(lbl_Bairro)
+                            .addComponent(lbl_Cidade)
+                            .addComponent(lbl_Cep)
+                            .addComponent(lbl_Email)
+                            .addComponent(lbl_Cpf_Cnpj)
+                            .addComponent(lbl_Telefone)
+                            .addComponent(lbl_sexo)
+                            .addComponent(lbl_uf))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtField_Cpf_Cpnj, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,8 +198,13 @@ public class Clientes extends javax.swing.JFrame {
                             .addComponent(txtField_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textField_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textField_Endereco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(165, Short.MAX_VALUE))
+                            .addComponent(textField_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(combo_estado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(radio_sexo_f)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radio_sexo_m)))))
+                .addContainerGap(164, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(378, Short.MAX_VALUE)
@@ -185,7 +214,7 @@ public class Clientes extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Cliente)
                     .addComponent(textField_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -221,6 +250,15 @@ public class Clientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Cpf_Cnpj)
                     .addComponent(txtField_Cpf_Cpnj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_sexo)
+                    .addComponent(radio_sexo_f)
+                    .addComponent(radio_sexo_m))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_uf)
+                    .addComponent(combo_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Gravar)
@@ -228,7 +266,7 @@ public class Clientes extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(270, Short.MAX_VALUE)
+                    .addContainerGap(340, Short.MAX_VALUE)
                     .addComponent(btn_Ler)
                     .addGap(7, 7, 7)))
         );
@@ -236,12 +274,9 @@ public class Clientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textField_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_ClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField_ClienteActionPerformed
-
     private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
         //Gravar os dados no objeto cliente c
+        //Falta CPF/CNPJ
         c.setNome(textField_Cliente.getText());
         c.setEndereco(textField_Endereco.getText());
         c.setNumero(textField_Numero.getText());
@@ -250,14 +285,9 @@ public class Clientes extends javax.swing.JFrame {
         c.setCep(txtField_Cep.getText());
         c.setEmail(txtField_Email.getText());
         c.setTelefone(txtField_Telefone.getText());
-        if(txtField_Cpf_Cpnj.getText() == "CPF"){
-            c.setCep(txtField_Cpf_Cpnj.getText());
-        }
-        else if(txtField_Cpf_Cpnj.getText() == "CNPJ")
-        {
-            c.setCnpj(txtField_Cpf_Cpnj.getText());
-        }
-        JOptionPane.showMessageDialog(null, "Parabens, você se cadastrou");
+        c.setUf(combo_estado.getSelectedItem().toString());
+        c.setSexo(sexoSelecionado);
+        JOptionPane.showMessageDialog(null, "Parabens, você se cadastrou ");
         btn_LimparActionPerformed(evt);
     }//GEN-LAST:event_btn_GravarActionPerformed
 
@@ -270,13 +300,16 @@ public class Clientes extends javax.swing.JFrame {
         txtField_Cep.setText(c.getCep());
         txtField_Telefone.setText(c.getTelefone());
         txtField_Email.setText(c.getEmail());
-        if(c.getCpf().isEmpty())
+        combo_estado.setSelectedItem(c.getUf());
+        if(c.getSexo() == 'F')
         {
-            txtField_Cpf_Cpnj.setText(c.getCpf());
+            radio_sexo_f.setSelected(true);
+            radio_sexo_m.setSelected(false);
         }
-        else
+        else if(c.getSexo() == 'M')
         {
-            txtField_Cpf_Cpnj.setText(c.getCnpj());
+            radio_sexo_f.setSelected(false);
+            radio_sexo_m.setSelected(true);
         }
     }//GEN-LAST:event_btn_LerActionPerformed
 
@@ -290,8 +323,26 @@ public class Clientes extends javax.swing.JFrame {
         txtField_Telefone.setText("");
         txtField_Email.setText("");
         txtField_Cpf_Cpnj.setText("");
-        txtField_Cpf_Cpnj.setText("");
+        combo_estado.setSelectedIndex(0);
+        radio_sexo_f.setSelected(false);
+        radio_sexo_m.setSelected(false);
     }//GEN-LAST:event_btn_LimparActionPerformed
+
+    private void radio_sexo_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_sexo_fActionPerformed
+       if(radio_sexo_f.isSelected())
+       {
+           radio_sexo_m.setSelected(false);
+           sexoSelecionado = radio_sexo_f.getText().charAt(0);
+       }
+    }//GEN-LAST:event_radio_sexo_fActionPerformed
+
+    private void radio_sexo_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_sexo_mActionPerformed
+       if(radio_sexo_m.isSelected())
+       {
+           radio_sexo_f.setSelected(false);
+           sexoSelecionado = radio_sexo_m.getText().charAt(0);
+       }
+    }//GEN-LAST:event_radio_sexo_mActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,6 +383,7 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JButton btn_Gravar;
     private javax.swing.JButton btn_Ler;
     private javax.swing.JButton btn_Limpar;
+    private javax.swing.JComboBox<String> combo_estado;
     private javax.swing.JLabel lbl_Bairro;
     private javax.swing.JLabel lbl_Cep;
     private javax.swing.JLabel lbl_Cidade;
@@ -341,6 +393,10 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Endereco;
     private javax.swing.JLabel lbl_Numero;
     private javax.swing.JLabel lbl_Telefone;
+    private javax.swing.JLabel lbl_sexo;
+    private javax.swing.JLabel lbl_uf;
+    private javax.swing.JRadioButton radio_sexo_f;
+    private javax.swing.JRadioButton radio_sexo_m;
     private javax.swing.JTextField textField_Cliente;
     private javax.swing.JTextField textField_Endereco;
     private javax.swing.JTextField textField_Numero;

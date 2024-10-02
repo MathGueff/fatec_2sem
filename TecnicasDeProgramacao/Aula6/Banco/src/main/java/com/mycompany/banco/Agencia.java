@@ -183,6 +183,10 @@ public class Agencia {
         {
             JOptionPane.showMessageDialog(null, "Estado inválido");
         }
+        else
+        {
+            this.uf = uf;
+        }
     }
 
     public String getCep() {
