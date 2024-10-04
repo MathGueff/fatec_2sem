@@ -1,4 +1,4 @@
-export class Courses {
+export class Course {
   id : number = 0;
   idCategory : number = 0;
   title : string = '';
