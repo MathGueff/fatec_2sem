@@ -52,8 +52,10 @@ public class Agencias extends javax.swing.JFrame {
         lbl_gerente = new javax.swing.JLabel();
         combo_uf = new javax.swing.JComboBox<>();
         lbl_gerente1 = new javax.swing.JLabel();
+        lbl_nomeAgencia1 = new javax.swing.JLabel();
+        txtField_nomeAgencia1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
         lbl_nomeAgencia.setForeground(new java.awt.Color(0, 0, 0));
@@ -154,6 +156,17 @@ public class Agencias extends javax.swing.JFrame {
         lbl_gerente1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_gerente1.setText("Estado da Agência");
 
+        lbl_nomeAgencia1.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_nomeAgencia1.setText("Id da Agência");
+
+        txtField_nomeAgencia1.setBackground(new java.awt.Color(204, 204, 204));
+        txtField_nomeAgencia1.setForeground(new java.awt.Color(51, 51, 51));
+        txtField_nomeAgencia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtField_nomeAgencia1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,6 +174,9 @@ public class Agencias extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_nomeAgencia1)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_Gravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
@@ -192,13 +208,18 @@ public class Agencias extends javax.swing.JFrame {
                                 .addComponent(txtField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtField_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtField_endereco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_nomeAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtField_nomeAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtField_nomeAgencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_nomeAgencia1)
+                    .addComponent(txtField_nomeAgencia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_nomeAgencia)
                     .addComponent(txtField_nomeAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -299,6 +320,10 @@ public class Agencias extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_combo_ufActionPerformed
 
+    private void txtField_nomeAgencia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_nomeAgencia1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtField_nomeAgencia1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -349,6 +374,7 @@ public class Agencias extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_gerente;
     private javax.swing.JLabel lbl_gerente1;
     private javax.swing.JLabel lbl_nomeAgencia;
+    private javax.swing.JLabel lbl_nomeAgencia1;
     private javax.swing.JLabel lbl_numero;
     private javax.swing.JTextField txtField_bairro;
     private javax.swing.JTextField txtField_cep;
@@ -358,6 +384,7 @@ public class Agencias extends javax.swing.JFrame {
     private javax.swing.JTextField txtField_endereco;
     private javax.swing.JTextField txtField_gerente;
     private javax.swing.JTextField txtField_nomeAgencia;
+    private javax.swing.JTextField txtField_nomeAgencia1;
     private javax.swing.JTextField txtField_numero;
     // End of variables declaration//GEN-END:variables
 }

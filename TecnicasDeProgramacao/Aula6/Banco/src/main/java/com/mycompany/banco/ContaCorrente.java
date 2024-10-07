@@ -21,7 +21,9 @@ public class ContaCorrente{
         this.num_agencia = num_agencia;
         this.id_cli = id_cli;
         this.saldo = saldo;
-    }   
+    }
+    
+    public ContaCorrente(){}
 
     public String getNum_conta() {
         return num_conta;
