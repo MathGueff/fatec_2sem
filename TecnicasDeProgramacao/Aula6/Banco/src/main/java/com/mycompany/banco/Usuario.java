@@ -22,6 +22,8 @@ public class Usuario {
         this.id_cli = id_cli;
         this.num_agencia = num_agencia;
     }
+    
+    public Usuario(){}
 
     public String getLogin() {
         return login;
