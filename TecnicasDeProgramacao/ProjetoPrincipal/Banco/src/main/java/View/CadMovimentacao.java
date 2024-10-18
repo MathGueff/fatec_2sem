@@ -4,6 +4,8 @@
  */
 package View;
 
+import com.mycompany.banco.Movimentacao;
+
 /**
  *
  * @author Alunos
@@ -17,6 +19,9 @@ public class CadMovimentacao extends javax.swing.JFrame {
         initComponents();
     }
 
+    Movimentacao m = new Movimentacao();
+    String tipoCartao = "";
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,9 +50,9 @@ public class CadMovimentacao extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnGravar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        btnLer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -62,8 +67,18 @@ public class CadMovimentacao extends javax.swing.JFrame {
         jLabel5.setText("Cartão");
 
         jRadioButton1.setText("Crédito");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setText("Débito");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Id do Histórico");
 
@@ -73,11 +88,26 @@ public class CadMovimentacao extends javax.swing.JFrame {
 
         jLabel9.setText("Saldo");
 
-        jButton1.setText("Gravar");
+        btnGravar.setText("Gravar");
+        btnGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGravarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Limpar");
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Ler");
+        btnLer.setText("Ler");
+        btnLer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,13 +158,13 @@ public class CadMovimentacao extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
-                            .addComponent(jButton1))
+                            .addComponent(btnGravar))
                         .addGap(82, 82, 82)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(btnLimpar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                                .addComponent(jButton3))
+                                .addComponent(btnLer))
                             .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
@@ -180,14 +210,75 @@ public class CadMovimentacao extends javax.swing.JFrame {
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnGravar)
+                    .addComponent(btnLimpar)
+                    .addComponent(btnLer))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
+        m.setNum_conta(jTextField1.getText());
+        m.setNum_age(jTextField2.getText());
+        m.setDocumento(jTextField3.getText());
+        m.setData_mov(jTextField4.getText());
+        if(jRadioButton1.isSelected()){}
+        m.setId_his(Integer.parseInt(jTextField5.getText()));
+        m.setCompl_hist(jTextField6.getText());
+        m.setSaldo(Double.parseDouble(jTextField7.getText()));
+        m.setValor(Double.parseDouble(jTextField8.getText()));
+        
+    }//GEN-LAST:event_btnGravarActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+       if(jRadioButton1.isSelected())
+       {
+           jRadioButton2.setSelected(false);
+           tipoCartao = "c";
+       }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        if(jRadioButton2.isSelected())
+       {
+           jRadioButton1.setSelected(false);
+           tipoCartao = "d";
+       }
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnLerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLerActionPerformed
+        jTextField1.setText(m.getNum_conta());
+        jTextField2.setText(m.getNum_age());
+        jTextField3.setText(m.getDocumento());
+        jTextField4.setText(m.getData_mov());
+        jTextField5.setText(Integer.toString(m.getId_his()));
+        jTextField6.setText(m.getCompl_hist());
+        jTextField7.setText(Double.toString(m.getValor()));
+        jTextField8.setText(Double.toString(m.getSaldo()));
+        if(m.getCreditoDebito() == "c"){
+            jRadioButton1.setSelected(true);
+            jRadioButton2.setSelected(false);
+        }
+        else if(m.getCreditoDebito() == "d"){
+            jRadioButton2.setSelected(true);
+            jRadioButton1.setSelected(false);
+        }
+    }//GEN-LAST:event_btnLerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,9 +317,9 @@ public class CadMovimentacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnGravar;
+    private javax.swing.JButton btnLer;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

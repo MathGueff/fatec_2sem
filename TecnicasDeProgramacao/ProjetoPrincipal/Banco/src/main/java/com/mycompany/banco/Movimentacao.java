@@ -33,6 +33,8 @@ public class Movimentacao {
         this.valor = valor;
         this.saldo = saldo;
     }
+    
+    public Movimentacao(){}
 
     public String getNum_conta() {
         return num_conta;

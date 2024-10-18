@@ -4,6 +4,8 @@
  */
 package View;
 
+import com.mycompany.banco.Historico;
+
 /**
  *
  * @author Alunos
@@ -16,6 +18,8 @@ public class CadHistorico extends javax.swing.JFrame {
     public CadHistorico() {
         initComponents();
     }
+    
+    Historico h = new Historico();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,9 +35,9 @@ public class CadHistorico extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnGravar = new javax.swing.JButton();
+        btnLer = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -45,11 +49,26 @@ public class CadHistorico extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("Gravar");
+        btnGravar.setText("Gravar");
+        btnGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGravarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Ler");
+        btnLer.setText("Ler");
+        btnLer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLerActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Limpar");
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,11 +90,11 @@ public class CadHistorico extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)
+                        .addComponent(btnGravar)
                         .addGap(83, 83, 83)
-                        .addComponent(jButton3)
+                        .addComponent(btnLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(btnLer)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -91,14 +110,29 @@ public class CadHistorico extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnGravar)
+                    .addComponent(btnLer)
+                    .addComponent(btnLimpar))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
+        h.setId_his(Integer.parseInt(jTextField1.getText()));
+        h.setHistorico(jTextArea1.getText());
+    }//GEN-LAST:event_btnGravarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        jTextArea1.setText("");
+        jTextField1.setText("");
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnLerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLerActionPerformed
+        jTextField1.setText(Integer.toString(h.getId_his()));
+        jTextArea1.setText(h.getHistorico());
+    }//GEN-LAST:event_btnLerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,9 +171,9 @@ public class CadHistorico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnGravar;
+    private javax.swing.JButton btnLer;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

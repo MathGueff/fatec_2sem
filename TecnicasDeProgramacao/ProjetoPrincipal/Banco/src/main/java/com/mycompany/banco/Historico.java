@@ -18,6 +18,8 @@ public class Historico {
         this.id_his = id_his;
         this.historico = historico;
     }
+    
+    public Historico(){}
 
     public int getId_his() {
         return id_his;

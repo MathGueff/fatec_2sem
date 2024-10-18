@@ -14,9 +14,9 @@ public class ContaCorrente{
     private String num_conta;
     private String num_agencia;
     private int id_cli;
-    private int saldo;
+    private double saldo;
     
-    public ContaCorrente(String num_conta, String num_agencia, int id_cli, int saldo){
+    public ContaCorrente(String num_conta, String num_agencia, int id_cli, double saldo){
         this.num_conta = num_conta;
         this.num_agencia = num_agencia;
         this.id_cli = id_cli;
@@ -63,11 +63,11 @@ public class ContaCorrente{
         }
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 }
