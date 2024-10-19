@@ -81,13 +81,9 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(nome.isBlank())
+            if(nome.isBlank() || nome.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Nome não pode ser branco");
-            }
-            else if(nome.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Nome não pode ser nulo");
+                JOptionPane.showMessageDialog(null, "Digite seu nome");
             }
             else
             { 
@@ -112,13 +108,9 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(cpf.isBlank())
+            if(cpf.isBlank() || cpf.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "CPF não pode ser em branco");
-            }
-            else if(cpf.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "CPF não pode ser nulo");
+                JOptionPane.showMessageDialog(null, "Digite seu CPF");
             }
             else
             {
@@ -144,13 +136,9 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(endereco.isBlank())
+            if(endereco.isBlank() || endereco.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Endereço não pode ser em branco");
-            }
-            else if(endereco.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Endereço não pode ser nulo");
+                JOptionPane.showMessageDialog(null, "Digite seu endereço");
             }
             else if(endereco.length() < 4)
             {
@@ -253,13 +241,9 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(uf.isBlank())
+            if(uf.isBlank() || uf.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Estado não pode ser branco");
-            }
-            else if(uf.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Estado não pode ser nulo");
+                JOptionPane.showMessageDialog(null, "Escolha um Estado");
             }
             else if(!estadosList.contains(uf))
             {
@@ -285,7 +269,12 @@ public class Cliente {
     public void setCep(String cep) {
         cep = cep.trim();
         if(isStatus()){
-            this.cep = cep;
+            if(cep.isBlank() || cep.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Digite seu CEP");
+            }
+            else{
+                this.cep = cep;
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "Para definir o cep a conta deve estar aberta");
@@ -303,13 +292,9 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(email.isBlank())
+            if(email.isBlank() || email.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Email não pode ser em branco");
-            }
-            else if(email.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Email não pode ser nulo");
+                JOptionPane.showMessageDialog(null, "Digite seu email");
             }
             else if(email.contains("@") && email.contains(".") && email.length() >= 5) //a@b.c
             {
@@ -346,15 +331,11 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(telefone.isBlank())
+            if(telefone.isBlank() || telefone.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Telefone não pode ser em branco");
+                JOptionPane.showMessageDialog(null, "Digite seu telefone");
             }
-            else if(telefone.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Telefone não pode ser nulo");
-            }
-            else if(telefone.length() != 13)
+            else if(telefone.length() != 11)
             {
                 JOptionPane.showMessageDialog(null, "Tamanho de telefone inválido");
             }
@@ -397,7 +378,7 @@ public class Cliente {
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Sexo inválido");
+                JOptionPane.showMessageDialog(null, "Escolha um sexo");
             }
         }
         else{

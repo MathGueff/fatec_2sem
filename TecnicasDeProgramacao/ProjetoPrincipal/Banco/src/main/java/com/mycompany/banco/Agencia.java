@@ -48,13 +48,9 @@ public class Agencia {
     }
 
     public void setNum_agencia(String num_agencia) {
-        if(num_agencia.isBlank())
+        if(num_agencia.isBlank() || num_agencia.isEmpty())
         {
-            JOptionPane.showMessageDialog(null, "Número da agência não pode ser branco");
-        }
-        else if(num_agencia.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, "Número da agência não pode ser nulo");
+            JOptionPane.showMessageDialog(null, "Digite o número da agência");
         }
         else{
             this.num_agencia = num_agencia;
@@ -66,13 +62,9 @@ public class Agencia {
     }
 
     public void setNome(String nome) {
-         if(nome.isBlank())
+         if(nome.isBlank() || nome.isEmpty())
         {
-            JOptionPane.showMessageDialog(null, "Nome não pode ser branco");
-        }
-        else if(nome.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, "Nome não pode ser nulo");
+            JOptionPane.showMessageDialog(null, "Digite seu nome");
         }
         else{
             this.nome = nome;
@@ -84,13 +76,9 @@ public class Agencia {
     }
 
     public void setEndereco(String endereco) {
-         if(endereco.isBlank())
+         if(endereco.isBlank() || endereco.isEmpty())
         {
-            JOptionPane.showMessageDialog(null, "Endereço não pode ser branco");
-        }
-        else if(endereco.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, "Endereço não pode ser nulo");
+            JOptionPane.showMessageDialog(null, "Digite o endereço");
         }
         else{
             this.endereco = endereco;
@@ -171,13 +159,9 @@ public class Agencia {
         /*
             Validação do campo
         */
-        if(uf.isBlank())
+        if(uf.isBlank() || uf.isEmpty())
         {
-            JOptionPane.showMessageDialog(null, "Estado não pode ser branco");
-        }
-        else if(uf.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, "Estado não pode ser nulo");
+            JOptionPane.showMessageDialog(null, "Escolha um estado");
         }
         else if(!estadosList.contains(uf))
         {
@@ -194,7 +178,12 @@ public class Agencia {
     }
 
     public void setCep(String cep) {
-        this.cep = cep;
+        if(cep.isEmpty() || cep.isBlank()){
+            JOptionPane.showMessageDialog(null,"Digite o CEP");
+        }
+        else{
+            this.cep = cep;
+        }
     }
 
     public String getCnpj() {
@@ -202,7 +191,12 @@ public class Agencia {
     }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+        if(cnpj.isEmpty() || cnpj.isBlank()){
+            JOptionPane.showMessageDialog(null,"Digite o CNPJ");
+        }
+        else{
+            this.cnpj = cnpj;
+        }
     }
 
     public String getGerente() {

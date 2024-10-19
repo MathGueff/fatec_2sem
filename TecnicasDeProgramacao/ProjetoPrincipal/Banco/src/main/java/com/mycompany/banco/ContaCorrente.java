@@ -30,8 +30,8 @@ public class ContaCorrente{
     }
 
     public void setNum_conta(String num_conta) {
-        if(num_conta == null)
-            JOptionPane.showMessageDialog(null, "Número da conta não pode ser vazio");
+        if(num_conta.isBlank() || num_conta.isEmpty())
+            JOptionPane.showMessageDialog(null, "Digite um número da conta");
         else{
             this.num_conta = num_conta;
         }
@@ -42,8 +42,8 @@ public class ContaCorrente{
     }
 
     public void setNum_agencia(String num_agencia) {
-        if(num_agencia == null){
-            JOptionPane.showMessageDialog(null, "Número da agência não pode ser vazio");
+        if(num_agencia.isBlank() || num_agencia.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite um número da agência");
         }
         else{
             this.num_agencia = num_agencia;
@@ -55,11 +55,15 @@ public class ContaCorrente{
     }
 
     public void setId_cli(int id_cli) {
-        if(id_cli == 0){
-            JOptionPane.showMessageDialog(null, "Número do cliente não pode ser vazio");
-        }
-        else{
-            this.id_cli = id_cli;
+        try{
+            if(id_cli == 0){
+                JOptionPane.showMessageDialog(null, "Digite um cliente válido");
+            }
+            else{
+                this.id_cli = id_cli;
+            }
+        } catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Digite um número válido");
         }
     }
 
@@ -68,6 +72,15 @@ public class ContaCorrente{
     }
 
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        try{
+            if(saldo < 0 || saldo == 0){
+                JOptionPane.showMessageDialog(null, "Digite um saldo válido");
+            }
+            else{
+                this.saldo = saldo;
+            }
+        } catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Digite um saldo válido");
+        }
     }
 }

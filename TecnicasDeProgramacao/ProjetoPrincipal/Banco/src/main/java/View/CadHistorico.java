@@ -120,8 +120,8 @@ public class CadHistorico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
-        h.setId_his(Integer.parseInt(jTextField1.getText()));
-        h.setHistorico(jTextArea1.getText());
+        h.setId_his(Integer.parseInt(jTextField1.getText().trim()));
+        h.setHistorico(jTextArea1.getText().trim());
     }//GEN-LAST:event_btnGravarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed

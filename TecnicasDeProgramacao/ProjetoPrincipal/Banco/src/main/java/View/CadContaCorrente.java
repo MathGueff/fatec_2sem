@@ -135,10 +135,10 @@ public class CadContaCorrente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
-        cc.setNum_conta(jTextField1.getText());
-        cc.setNum_agencia(jTextField2.getText());
-        cc.setId_cli(Integer.parseInt(jTextField3.getText()));
-        cc.setSaldo(Double.parseDouble(jTextField4.getText()));
+        cc.setNum_conta(jTextField1.getText().trim());
+        cc.setNum_agencia(jTextField2.getText().trim());
+        cc.setId_cli(Integer.parseInt(jTextField3.getText().trim()));
+        cc.setSaldo(Double.parseDouble(jTextField4.getText().trim()));
     }//GEN-LAST:event_btn_GravarActionPerformed
 
     private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
@@ -146,7 +146,6 @@ public class CadContaCorrente extends javax.swing.JFrame {
         jTextField2.setText("");
         jTextField3.setText("");
         jTextField4.setText("");
-        
     }//GEN-LAST:event_btn_LimparActionPerformed
 
     private void btn_LerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LerActionPerformed

@@ -26,11 +26,15 @@ public class Historico {
     }
 
     public void setId_his(int id_his) {
-        if(id_his == 0){
-            JOptionPane.showMessageDialog(null, "Número do histórico não pode ser vazio");
-        }
-        else{
-            this.id_his = id_his;
+        try{
+            if(id_his == 0){
+                JOptionPane.showMessageDialog(null, "Número do histórico não pode ser vazio");
+            }
+            else{
+                this.id_his = id_his;
+            }
+        } catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Digite um número válido");
         }
     }
 
@@ -39,8 +43,8 @@ public class Historico {
     }
 
     public void setHistorico(String historico) {
-        if(historico == null){
-            JOptionPane.showMessageDialog(null, "Histórico não pode ser vazio");
+        if(historico.isBlank() || historico.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o histórico");
         }
         else{
             this.historico = historico;

@@ -145,7 +145,7 @@ public class Agencias extends javax.swing.JFrame {
         lbl_gerente.setForeground(new java.awt.Color(0, 0, 0));
         lbl_gerente.setText("Gerente da Agência");
 
-        combo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        combo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estado", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         combo_uf.setToolTipText("");
         combo_uf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,16 +275,16 @@ public class Agencias extends javax.swing.JFrame {
     }//GEN-LAST:event_txtField_nomeAgenciaActionPerformed
 
     private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
-        agencia_jframe.setNome(txtField_nomeAgencia.getText());
-        agencia_jframe.setEndereco(txtField_endereco.getText());
-        agencia_jframe.setNumero(txtField_numero.getText());
-        agencia_jframe.setComplemento(txtField_complemento.getText());
-        agencia_jframe.setBairro(txtField_bairro.getText());
-        agencia_jframe.setCidade(txtField_cidade.getText());
-        agencia_jframe.setCep(txtField_cep.getText());
-        agencia_jframe.setCnpj(txtField_cnpj.getText());
-        agencia_jframe.setGerente(txtField_gerente.getText());
-        agencia_jframe.setUf(combo_uf.getSelectedItem().toString());
+        agencia_jframe.setNome(txtField_nomeAgencia.getText().trim());
+        agencia_jframe.setEndereco(txtField_endereco.getText().trim());
+        agencia_jframe.setNumero(txtField_numero.getText().trim());
+        agencia_jframe.setComplemento(txtField_complemento.getText().trim());
+        agencia_jframe.setBairro(txtField_bairro.getText().trim());
+        agencia_jframe.setCidade(txtField_cidade.getText().trim());
+        agencia_jframe.setCep(txtField_cep.getText().trim());
+        agencia_jframe.setCnpj(txtField_cnpj.getText().trim());
+        agencia_jframe.setGerente(txtField_gerente.getText().trim());
+        agencia_jframe.setUf(combo_uf.getSelectedItem().toString().trim());
         btn_LimparActionPerformed(evt);
     }//GEN-LAST:event_btn_GravarActionPerformed
 

@@ -41,8 +41,8 @@ public class Movimentacao {
     }
 
     public void setNum_conta(String num_conta) {
-        if(num_conta == null){
-            JOptionPane.showMessageDialog(null, "Número da conta não pode ser vazio");
+        if(num_conta.isBlank() || num_conta.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o número da conta");
         }
         else{
             this.num_conta = num_conta;
@@ -54,7 +54,7 @@ public class Movimentacao {
     }
 
     public void setNum_age(String num_age) {
-        if(num_age == null){
+        if(num_age.isBlank() || num_age.isEmpty()){
             JOptionPane.showMessageDialog(null, "Número da agência não pode ser vazio");
         }
         else{
@@ -67,7 +67,12 @@ public class Movimentacao {
     }
 
     public void setDocumento(String documento) {
-        this.documento = documento;
+        if(num_age.isBlank() || num_age.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o Número de Documento");
+        }
+        else{
+            this.documento = documento;
+        }
     }
 
     public String getData_mov() {
@@ -75,8 +80,8 @@ public class Movimentacao {
     }
 
     public void setData_mov(String data_mov) {
-        if(data_mov == null){
-            JOptionPane.showMessageDialog(null, "Data da movimentação não pode ser vazio");
+        if(data_mov.isBlank() || data_mov.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite a data");
         }
         else{
             this.data_mov = data_mov;
@@ -88,8 +93,11 @@ public class Movimentacao {
     }
 
     public void setCreditoDebito(String creditoDebito) {
-        if(creditoDebito == null){
-            JOptionPane.showMessageDialog(null, "Cartão não pode ser vazio");
+        if(creditoDebito.isBlank() || creditoDebito.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Escolha um cartão");
+        }
+        else if(creditoDebito != "c" && creditoDebito != "d"){
+            JOptionPane.showMessageDialog(null, "Cartão inválido");
         }
         else{
             this.creditoDebito = creditoDebito;
@@ -122,8 +130,8 @@ public class Movimentacao {
     }
 
     public void setValor(double valor) {
-        if(valor == 0){
-            JOptionPane.showMessageDialog(null, "Valor não pode ser vazio");
+        if(valor == 0 || valor < 0){
+            JOptionPane.showMessageDialog(null, "Digite um valor válido");
         }
         else{
             this.valor = valor;
@@ -135,8 +143,8 @@ public class Movimentacao {
     }
 
     public void setSaldo(double saldo) {
-        if(saldo == 0){
-            JOptionPane.showMessageDialog(null, "Saldo não pode ser vazio");
+        if(saldo == 0 || saldo < 0){
+            JOptionPane.showMessageDialog(null, "Digite um saldo válido");
         }
         else{
             this.saldo = saldo;
