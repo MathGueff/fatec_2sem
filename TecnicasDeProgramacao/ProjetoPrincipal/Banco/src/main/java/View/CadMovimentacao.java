@@ -5,6 +5,7 @@
 package View;
 
 import com.mycompany.banco.Movimentacao;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,7 +65,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
 
         jLabel4.setText("Data de Movimentação");
 
-        jLabel5.setText("Cartão");
+        jLabel5.setText("Tipo");
 
         jRadioButton1.setText("Crédito");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,16 +145,13 @@ public class CadMovimentacao extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
                                 .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(29, 29, 29)
+                                .addComponent(jRadioButton2))
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -166,7 +164,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,11 +223,12 @@ public class CadMovimentacao extends javax.swing.JFrame {
         m.setDocumento(jTextField3.getText());
         m.setData_mov(jTextField4.getText());
         m.setCreditoDebito(tipoCartao); //Variável com o radio selecionado
-        m.setId_his(Integer.parseInt(jTextField5.getText()));
+        m.setId_his(jTextField5.getText().isBlank() || jTextField5.getText().isEmpty() ? 0 : Integer.parseInt(jTextField5.getText()));
         m.setCompl_hist(jTextField6.getText());
-        m.setSaldo(Double.parseDouble(jTextField7.getText()));
-        m.setValor(Double.parseDouble(jTextField8.getText()));
-        
+        m.setSaldo(jTextField7.getText().isBlank() || jTextField7.getText().isEmpty()? 0 : Double.parseDouble(jTextField7.getText()));
+        m.setValor(jTextField8.getText().isBlank() || jTextField8.getText().isEmpty()? 0 : Double.parseDouble(jTextField8.getText()));
+        JOptionPane.showMessageDialog(null, "Cadastrado");
+        btnLimparActionPerformed(evt);
     }//GEN-LAST:event_btnGravarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -259,6 +258,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
         jTextField8.setText("");
         jRadioButton1.setSelected(false);
         jRadioButton2.setSelected(false);
+        tipoCartao = "";
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnLerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLerActionPerformed
@@ -271,10 +271,12 @@ public class CadMovimentacao extends javax.swing.JFrame {
         jTextField7.setText(Double.toString(m.getValor()));
         jTextField8.setText(Double.toString(m.getSaldo()));
         if(m.getCreditoDebito() == "c"){
+            tipoCartao = "c";
             jRadioButton1.setSelected(true);
             jRadioButton2.setSelected(false);
         }
         else if(m.getCreditoDebito() == "d"){
+            tipoCartao = "d";
             jRadioButton2.setSelected(true);
             jRadioButton1.setSelected(false);
         }

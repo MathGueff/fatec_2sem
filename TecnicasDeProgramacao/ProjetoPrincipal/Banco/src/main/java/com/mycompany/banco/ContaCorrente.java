@@ -30,6 +30,7 @@ public class ContaCorrente{
     }
 
     public void setNum_conta(String num_conta) {
+        num_conta = num_conta.trim();
         if(num_conta.isBlank() || num_conta.isEmpty())
             JOptionPane.showMessageDialog(null, "Digite um número da conta");
         else{
@@ -42,6 +43,7 @@ public class ContaCorrente{
     }
 
     public void setNum_agencia(String num_agencia) {
+        num_agencia = num_agencia.trim();
         if(num_agencia.isBlank() || num_agencia.isEmpty()){
             JOptionPane.showMessageDialog(null, "Digite um número da agência");
         }

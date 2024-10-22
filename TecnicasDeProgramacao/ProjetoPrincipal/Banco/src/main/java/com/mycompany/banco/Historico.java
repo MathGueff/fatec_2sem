@@ -28,7 +28,7 @@ public class Historico {
     public void setId_his(int id_his) {
         try{
             if(id_his == 0){
-                JOptionPane.showMessageDialog(null, "Número do histórico não pode ser vazio");
+                JOptionPane.showMessageDialog(null, "Digite um número de histórico");
             }
             else{
                 this.id_his = id_his;
@@ -43,6 +43,7 @@ public class Historico {
     }
 
     public void setHistorico(String historico) {
+        historico = historico.trim();
         if(historico.isBlank() || historico.isEmpty()){
             JOptionPane.showMessageDialog(null, "Digite o histórico");
         }

@@ -19,6 +19,8 @@ public class Clientes extends javax.swing.JFrame {
     }
     
     Cliente c = new Cliente();
+    String identificacao = "";
+    
     char sexoSelecionado = ' ';
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,31 +34,31 @@ public class Clientes extends javax.swing.JFrame {
         lbl_Cliente = new javax.swing.JLabel();
         lbl_Endereco = new javax.swing.JLabel();
         lbl_Numero = new javax.swing.JLabel();
-        textField_Cliente = new javax.swing.JTextField();
-        textField_Endereco = new javax.swing.JTextField();
-        textField_Numero = new javax.swing.JTextField();
+        JTextField2 = new javax.swing.JTextField();
+        JTextField3 = new javax.swing.JTextField();
+        JTextField4 = new javax.swing.JTextField();
         btn_Gravar = new javax.swing.JButton();
         btn_Ler = new javax.swing.JButton();
         lbl_Bairro = new javax.swing.JLabel();
-        txtField_Bairro = new javax.swing.JTextField();
-        txtField_Cidade = new javax.swing.JTextField();
+        JTextField5 = new javax.swing.JTextField();
+        JTextField6 = new javax.swing.JTextField();
         lbl_Cidade = new javax.swing.JLabel();
-        txtField_Cep = new javax.swing.JTextField();
+        JTextField7 = new javax.swing.JTextField();
         lbl_Cep = new javax.swing.JLabel();
         lbl_Email = new javax.swing.JLabel();
-        txtField_Email = new javax.swing.JTextField();
+        JTextField8 = new javax.swing.JTextField();
         lbl_Telefone = new javax.swing.JLabel();
-        txtField_Telefone = new javax.swing.JTextField();
+        JTextField9 = new javax.swing.JTextField();
         lbl_Cpf_Cnpj = new javax.swing.JLabel();
-        txtField_Cpf_Cpnj = new javax.swing.JTextField();
+        JTextField10 = new javax.swing.JTextField();
         btn_Limpar = new javax.swing.JButton();
         lbl_sexo = new javax.swing.JLabel();
         lbl_uf = new javax.swing.JLabel();
-        combo_estado = new javax.swing.JComboBox<>();
-        radio_sexo_f = new javax.swing.JRadioButton();
-        radio_sexo_m = new javax.swing.JRadioButton();
+        JComboBox = new javax.swing.JComboBox<>();
+        JRadioButton1 = new javax.swing.JRadioButton();
+        JRadioButton2 = new javax.swing.JRadioButton();
         lbl_IdCliente = new javax.swing.JLabel();
-        txtField_Id = new javax.swing.JTextField();
+        JTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -70,15 +72,15 @@ public class Clientes extends javax.swing.JFrame {
         lbl_Numero.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Numero.setText("Número");
 
-        textField_Cliente.setBackground(new java.awt.Color(204, 204, 204));
-        textField_Cliente.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField2.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField2.setForeground(new java.awt.Color(51, 51, 51));
 
-        textField_Endereco.setBackground(new java.awt.Color(204, 204, 204));
-        textField_Endereco.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField3.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField3.setForeground(new java.awt.Color(51, 51, 51));
 
-        textField_Numero.setBackground(new java.awt.Color(204, 204, 204));
-        textField_Numero.setForeground(new java.awt.Color(51, 51, 51));
-        textField_Numero.setToolTipText("");
+        JTextField4.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField4.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField4.setToolTipText("");
 
         btn_Gravar.setText("Gravar");
         btn_Gravar.addActionListener(new java.awt.event.ActionListener() {
@@ -97,20 +99,20 @@ public class Clientes extends javax.swing.JFrame {
         lbl_Bairro.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Bairro.setText("Bairro");
 
-        txtField_Bairro.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Bairro.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_Bairro.setToolTipText("");
+        JTextField5.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField5.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField5.setToolTipText("");
 
-        txtField_Cidade.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Cidade.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_Cidade.setToolTipText("");
+        JTextField6.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField6.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField6.setToolTipText("");
 
         lbl_Cidade.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Cidade.setText("Cidade");
 
-        txtField_Cep.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Cep.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_Cep.setToolTipText("");
+        JTextField7.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField7.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField7.setToolTipText("");
 
         lbl_Cep.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Cep.setText("CEP");
@@ -118,23 +120,23 @@ public class Clientes extends javax.swing.JFrame {
         lbl_Email.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Email.setText("Email");
 
-        txtField_Email.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Email.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_Email.setToolTipText("");
+        JTextField8.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField8.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField8.setToolTipText("");
 
         lbl_Telefone.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Telefone.setText("Telefone");
 
-        txtField_Telefone.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Telefone.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_Telefone.setToolTipText("");
+        JTextField9.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField9.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField9.setToolTipText("");
 
         lbl_Cpf_Cnpj.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Cpf_Cnpj.setText("CPF/CNPJ");
 
-        txtField_Cpf_Cpnj.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Cpf_Cpnj.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_Cpf_Cpnj.setToolTipText("");
+        JTextField10.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField10.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField10.setToolTipText("");
 
         btn_Limpar.setText("Limpar");
         btn_Limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -149,27 +151,27 @@ public class Clientes extends javax.swing.JFrame {
         lbl_uf.setForeground(new java.awt.Color(0, 0, 0));
         lbl_uf.setText("Estado do Cliente");
 
-        combo_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        JComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ESTADO", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
-        radio_sexo_f.setText("F");
-        radio_sexo_f.addActionListener(new java.awt.event.ActionListener() {
+        JRadioButton1.setText("Feminino");
+        JRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radio_sexo_fActionPerformed(evt);
+                JRadioButton1ActionPerformed(evt);
             }
         });
 
-        radio_sexo_m.setText("M");
-        radio_sexo_m.addActionListener(new java.awt.event.ActionListener() {
+        JRadioButton2.setText("Masculino");
+        JRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radio_sexo_mActionPerformed(evt);
+                JRadioButton2ActionPerformed(evt);
             }
         });
 
         lbl_IdCliente.setForeground(new java.awt.Color(0, 0, 0));
         lbl_IdCliente.setText("Id do Cliente");
 
-        txtField_Id.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_Id.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField1.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,53 +185,53 @@ public class Clientes extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_IdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textField_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
                                 .addComponent(lbl_sexo)
                                 .addGap(86, 86, 86)
-                                .addComponent(radio_sexo_f)
+                                .addComponent(JRadioButton1)
                                 .addGap(6, 6, 6)
-                                .addComponent(radio_sexo_m))
+                                .addComponent(JRadioButton2))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textField_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
                                 .addComponent(lbl_uf)
                                 .addGap(18, 18, 18)
-                                .addComponent(combo_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textField_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Cep, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Cep, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_Cpf_Cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtField_Cpf_Cpnj, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(JTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(33, 33, 33))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_Gravar)
@@ -247,24 +249,24 @@ public class Clientes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(lbl_IdCliente))
-                    .addComponent(txtField_Id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addComponent(lbl_sexo))
-                            .addComponent(radio_sexo_f)
-                            .addComponent(radio_sexo_m)))
+                            .addComponent(JRadioButton1)
+                            .addComponent(JRadioButton2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(lbl_Cliente)))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combo_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,43 +277,43 @@ public class Clientes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Numero))
-                    .addComponent(textField_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Bairro))
-                    .addComponent(txtField_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Cidade))
-                    .addComponent(txtField_Cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Cep))
-                    .addComponent(txtField_Cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Email))
-                    .addComponent(txtField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Telefone))
-                    .addComponent(txtField_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lbl_Cpf_Cnpj))
-                    .addComponent(txtField_Cpf_Cpnj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Gravar)
@@ -325,73 +327,98 @@ public class Clientes extends javax.swing.JFrame {
 
     private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
         //Gravar os dados no objeto cliente c
-        //Falta CPF/CNPJ
-        c.setNome(textField_Cliente.getText());
-        c.setEndereco(textField_Endereco.getText());
-        c.setNumero(textField_Numero.getText());
-        c.setBairro(txtField_Bairro.getText());
-        c.setCidade(txtField_Cidade.getText());
-        c.setCep(txtField_Cep.getText());
-        c.setEmail(txtField_Email.getText());
-        c.setTelefone(txtField_Telefone.getText());
-        c.setUf(combo_estado.getSelectedItem().toString());
+        c.setId_cli(JTextField1.getText().isBlank() || JTextField1.getText().isEmpty() ? 0 : Integer.parseInt(JTextField1.getText()));
+        c.setNome(JTextField2.getText());
+        c.setEndereco(JTextField3.getText());
+        c.setNumero(JTextField4.getText());
+        c.setBairro(JTextField5.getText());
+        c.setCidade(JTextField6.getText());
+        c.setCep(JTextField7.getText());
+        c.setEmail(JTextField8.getText());
+        c.setTelefone(JTextField9.getText());
+        
+        if(JTextField10.getText().length() == 11){
+            //CPF
+            c.setCpf(JTextField10.getText());
+            identificacao = "cpf";
+        }
+        else if(JTextField10.getText().length() == 14){
+            //CNPJ
+            c.setCnpj(JTextField10.getText());
+            identificacao = "cnpj";
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Digite o CPF ou CNPJ");
+        }
+        c.setUf(JComboBox.getSelectedItem().toString());
         c.setSexo(sexoSelecionado);
-        JOptionPane.showMessageDialog(null, "Parabens, você se cadastrou ");
+        JOptionPane.showMessageDialog(null, "Cadastrado");
         btn_LimparActionPerformed(evt);
     }//GEN-LAST:event_btn_GravarActionPerformed
 
     private void btn_LerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LerActionPerformed
-        textField_Cliente.setText(c.getNome());
-        textField_Endereco.setText(c.getEndereco());
-        textField_Numero.setText(c.getNumero());
-        txtField_Bairro.setText(c.getBairro());
-        txtField_Cidade.setText(c.getCidade());
-        txtField_Cep.setText(c.getCep());
-        txtField_Telefone.setText(c.getTelefone());
-        txtField_Email.setText(c.getEmail());
-        combo_estado.setSelectedItem(c.getUf());
+        JTextField2.setText(c.getNome());
+        JTextField3.setText(c.getEndereco());
+        JTextField4.setText(c.getNumero());
+        JTextField5.setText(c.getBairro());
+        JTextField6.setText(c.getCidade());
+        JTextField7.setText(c.getCep());
+        JTextField8.setText(c.getEmail());
+        JTextField9.setText(c.getTelefone());
+        
+        if(identificacao == "cpf"){
+            JTextField10.setText(c.getCpf());
+        }
+        else if(identificacao == "cnpj"){
+            JTextField10.setText(c.getCnpj());
+        }
+        
+        JComboBox.setSelectedItem(c.getUf());
         if(c.getSexo() == 'F')
         {
-            radio_sexo_f.setSelected(true);
-            radio_sexo_m.setSelected(false);
+            JRadioButton1.setSelected(true);
+            JRadioButton2.setSelected(false);
+            sexoSelecionado = 'F';
         }
         else if(c.getSexo() == 'M')
         {
-            radio_sexo_f.setSelected(false);
-            radio_sexo_m.setSelected(true);
+            JRadioButton1.setSelected(false);
+            JRadioButton2.setSelected(true);
+            sexoSelecionado = 'M';
         }
     }//GEN-LAST:event_btn_LerActionPerformed
 
     private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
-        textField_Cliente.setText("");
-        textField_Endereco.setText("");
-        textField_Numero.setText("");
-        txtField_Bairro.setText("");
-        txtField_Cidade.setText("");
-        txtField_Cep.setText("");
-        txtField_Telefone.setText("");
-        txtField_Email.setText("");
-        txtField_Cpf_Cpnj.setText("");
-        combo_estado.setSelectedIndex(0);
-        radio_sexo_f.setSelected(false);
-        radio_sexo_m.setSelected(false);
+        JTextField2.setText("");
+        JTextField3.setText("");
+        JTextField4.setText("");
+        JTextField5.setText("");
+        JTextField6.setText("");
+        JTextField7.setText("");
+        JTextField9.setText("");
+        JTextField8.setText("");
+        JTextField10.setText("");
+        JComboBox.setSelectedIndex(0);
+        JRadioButton1.setSelected(false);
+        JRadioButton2.setSelected(false);
+        sexoSelecionado = ' ';
     }//GEN-LAST:event_btn_LimparActionPerformed
 
-    private void radio_sexo_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_sexo_fActionPerformed
-       if(radio_sexo_f.isSelected())
+    private void JRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRadioButton1ActionPerformed
+       if(JRadioButton1.isSelected())
        {
-           radio_sexo_m.setSelected(false);
-           sexoSelecionado = radio_sexo_f.getText().charAt(0);
+           JRadioButton2.setSelected(false);
+           sexoSelecionado = 'F';
        }
-    }//GEN-LAST:event_radio_sexo_fActionPerformed
+    }//GEN-LAST:event_JRadioButton1ActionPerformed
 
-    private void radio_sexo_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_sexo_mActionPerformed
-       if(radio_sexo_m.isSelected())
+    private void JRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRadioButton2ActionPerformed
+       if(JRadioButton2.isSelected())
        {
-           radio_sexo_f.setSelected(false);
-           sexoSelecionado = radio_sexo_m.getText().charAt(0);
+           JRadioButton1.setSelected(false);
+           sexoSelecionado = 'M';
        }
-    }//GEN-LAST:event_radio_sexo_mActionPerformed
+    }//GEN-LAST:event_JRadioButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,10 +456,22 @@ public class Clientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> JComboBox;
+    private javax.swing.JRadioButton JRadioButton1;
+    private javax.swing.JRadioButton JRadioButton2;
+    private javax.swing.JTextField JTextField1;
+    private javax.swing.JTextField JTextField10;
+    private javax.swing.JTextField JTextField2;
+    private javax.swing.JTextField JTextField3;
+    private javax.swing.JTextField JTextField4;
+    private javax.swing.JTextField JTextField5;
+    private javax.swing.JTextField JTextField6;
+    private javax.swing.JTextField JTextField7;
+    private javax.swing.JTextField JTextField8;
+    private javax.swing.JTextField JTextField9;
     private javax.swing.JButton btn_Gravar;
     private javax.swing.JButton btn_Ler;
     private javax.swing.JButton btn_Limpar;
-    private javax.swing.JComboBox<String> combo_estado;
     private javax.swing.JLabel lbl_Bairro;
     private javax.swing.JLabel lbl_Cep;
     private javax.swing.JLabel lbl_Cidade;
@@ -445,17 +484,5 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Telefone;
     private javax.swing.JLabel lbl_sexo;
     private javax.swing.JLabel lbl_uf;
-    private javax.swing.JRadioButton radio_sexo_f;
-    private javax.swing.JRadioButton radio_sexo_m;
-    private javax.swing.JTextField textField_Cliente;
-    private javax.swing.JTextField textField_Endereco;
-    private javax.swing.JTextField textField_Numero;
-    private javax.swing.JTextField txtField_Bairro;
-    private javax.swing.JTextField txtField_Cep;
-    private javax.swing.JTextField txtField_Cidade;
-    private javax.swing.JTextField txtField_Cpf_Cpnj;
-    private javax.swing.JTextField txtField_Email;
-    private javax.swing.JTextField txtField_Id;
-    private javax.swing.JTextField txtField_Telefone;
     // End of variables declaration//GEN-END:variables
 }

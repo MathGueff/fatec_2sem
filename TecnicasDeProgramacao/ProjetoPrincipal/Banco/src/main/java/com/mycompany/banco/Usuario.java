@@ -30,8 +30,9 @@ public class Usuario {
     }
 
     public void setLogin(String login) {
-        if(login == null){
-            JOptionPane.showMessageDialog(null, "Login inválido");
+        login = login.trim();
+        if(login.isBlank() || login.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o login");
         }
         else{
             this.login = login;
@@ -43,8 +44,12 @@ public class Usuario {
     }
 
     public void setSenha(String senha) {
-        if(senha == null || senha.length() < 10){
-            JOptionPane.showMessageDialog(null, "Senha inválida");
+        senha = senha.trim();
+        if(senha.isBlank() || senha.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite uma senha válida");
+        }
+        else if(senha.length() < 10){
+            JOptionPane.showMessageDialog(null, "A senha deve ter pelo menos 10 caracteres");
         }
         else{
             this.senha = senha;
@@ -57,7 +62,7 @@ public class Usuario {
 
     public void setId_cli(int id_cli) {
         if(id_cli == 0){
-            JOptionPane.showMessageDialog(null, "Número do Cliente inválido");
+            JOptionPane.showMessageDialog(null, "Digite um número de cliente válido");
         }
         else{
             this.id_cli = id_cli;
@@ -70,7 +75,7 @@ public class Usuario {
 
     public void setNum_agencia(int num_agencia) {
         if(num_agencia == 0){
-            JOptionPane.showMessageDialog(null, "Número da agência inválido");
+            JOptionPane.showMessageDialog(null, "Digite um número da agência inválido");
         }
         else{
             this.num_agencia = num_agencia;

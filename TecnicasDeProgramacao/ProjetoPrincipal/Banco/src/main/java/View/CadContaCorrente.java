@@ -4,6 +4,7 @@
  */
 package View;
 import com.mycompany.banco.ContaCorrente;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Alunos
@@ -135,10 +136,12 @@ public class CadContaCorrente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
-        cc.setNum_conta(jTextField1.getText().trim());
-        cc.setNum_agencia(jTextField2.getText().trim());
-        cc.setId_cli(Integer.parseInt(jTextField3.getText().trim()));
-        cc.setSaldo(Double.parseDouble(jTextField4.getText().trim()));
+        cc.setNum_conta(jTextField1.getText());
+        cc.setNum_agencia(jTextField2.getText());
+        cc.setId_cli(jTextField3.getText().isEmpty() || jTextField3.getText().isBlank()? 0 : Integer.parseInt(jTextField3.getText().trim()));
+        cc.setSaldo(jTextField4.getText().isEmpty() || jTextField4.getText().isBlank() ? 0 : Double.parseDouble(jTextField4.getText().trim()));
+        JOptionPane.showMessageDialog(null, "Cadastrado ");
+        btn_LimparActionPerformed(evt);
     }//GEN-LAST:event_btn_GravarActionPerformed
 
     private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed

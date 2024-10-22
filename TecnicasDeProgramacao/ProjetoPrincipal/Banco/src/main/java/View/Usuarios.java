@@ -5,6 +5,7 @@
 package View;
 
 import com.mycompany.banco.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -137,10 +138,12 @@ public class Usuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_gravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gravarActionPerformed
-        u.setId_cli(Integer.parseInt(jTextField1.getText()));
+        u.setId_cli(jTextField1.getText().isBlank() || jTextField1.getText().isEmpty() ? 0 : Integer.parseInt(jTextField1.getText().trim()));
         u.setLogin(jTextField2.getText());
         u.setSenha(jTextField3.getText());
-        u.setNum_agencia(Integer.parseInt(jTextField4.getText()));
+        u.setNum_agencia(jTextField4.getText().isBlank() || jTextField4.getText().isEmpty() ? 0 : Integer.parseInt(jTextField4.getText().trim()));
+        JOptionPane.showMessageDialog(null, "Cadastrado");
+        btn_limparActionPerformed(evt);
     }//GEN-LAST:event_btn_gravarActionPerformed
 
     private void btn_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparActionPerformed

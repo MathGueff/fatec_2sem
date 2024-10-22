@@ -5,6 +5,7 @@
 package View;
 
 import com.mycompany.banco.Historico;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -120,8 +121,10 @@ public class CadHistorico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
-        h.setId_his(Integer.parseInt(jTextField1.getText().trim()));
-        h.setHistorico(jTextArea1.getText().trim());
+        h.setId_his(jTextField1.getText().isBlank() || jTextField1.getText().isEmpty() ? 0 : Integer.parseInt(jTextField1.getText().trim()));
+        h.setHistorico(jTextArea1.getText());
+        JOptionPane.showMessageDialog(null, "Cadastrado");
+        btnLimparActionPerformed(evt);
     }//GEN-LAST:event_btnGravarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed

@@ -4,7 +4,6 @@
  */
 package com.mycompany.banco;
 
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,6 +40,7 @@ public class Movimentacao {
     }
 
     public void setNum_conta(String num_conta) {
+        num_conta = num_conta.trim();
         if(num_conta.isBlank() || num_conta.isEmpty()){
             JOptionPane.showMessageDialog(null, "Digite o número da conta");
         }
@@ -54,8 +54,9 @@ public class Movimentacao {
     }
 
     public void setNum_age(String num_age) {
+        num_age = num_age.trim();
         if(num_age.isBlank() || num_age.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Número da agência não pode ser vazio");
+            JOptionPane.showMessageDialog(null, "Digite o número da agência");
         }
         else{
             this.num_age = num_age;
@@ -67,8 +68,9 @@ public class Movimentacao {
     }
 
     public void setDocumento(String documento) {
-        if(num_age.isBlank() || num_age.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Digite o Número de Documento");
+        documento = documento.trim();
+        if(documento.isBlank() || documento.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o número de documento");
         }
         else{
             this.documento = documento;
@@ -80,6 +82,7 @@ public class Movimentacao {
     }
 
     public void setData_mov(String data_mov) {
+        data_mov = data_mov.trim();
         if(data_mov.isBlank() || data_mov.isEmpty()){
             JOptionPane.showMessageDialog(null, "Digite a data");
         }
@@ -93,14 +96,15 @@ public class Movimentacao {
     }
 
     public void setCreditoDebito(String creditoDebito) {
+        creditoDebito = creditoDebito.trim();
         if(creditoDebito.isBlank() || creditoDebito.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Escolha um cartão");
+            JOptionPane.showMessageDialog(null, "Escolha uma opção válida");
         }
-        else if(creditoDebito != "c" && creditoDebito != "d"){
-            JOptionPane.showMessageDialog(null, "Cartão inválido");
+        else if(creditoDebito == "c" || creditoDebito == "d"){
+            this.creditoDebito = creditoDebito;
         }
         else{
-            this.creditoDebito = creditoDebito;
+            JOptionPane.showMessageDialog(null, "Escolha entre credito e débito");
         }
     }
 
@@ -110,7 +114,7 @@ public class Movimentacao {
 
     public void setId_his(int id_his) {
         if(id_his == 0){
-            JOptionPane.showMessageDialog(null, "Numero do histórico não pode ser vazio");
+            JOptionPane.showMessageDialog(null, "Digite o número do histórico");
         }
         else{
             this.id_his = id_his;
@@ -122,6 +126,7 @@ public class Movimentacao {
     }
 
     public void setCompl_hist(String compl_hist) {
+        compl_hist = compl_hist.trim();
         this.compl_hist = compl_hist;
     }
 

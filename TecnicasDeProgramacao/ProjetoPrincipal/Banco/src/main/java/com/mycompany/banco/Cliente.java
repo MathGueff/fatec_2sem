@@ -4,7 +4,7 @@
  */
 package com.mycompany.banco;
 
-import java.util.ArrayList;
+import Validator.AtrValidator;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -59,7 +59,7 @@ public class Cliente {
     public void setId_cli(int id_cli) {
         if(isStatus()){
             if(id_cli == 0){
-                JOptionPane.showMessageDialog(null, "O id não pode ser 0");
+                JOptionPane.showMessageDialog(null, "Digite um ID válido");
             }
             else
             {
@@ -96,34 +96,6 @@ public class Cliente {
         else{
             JOptionPane.showMessageDialog(null, "Para definir o nome a conta deve estar aberta");
         }
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        cpf = cpf.trim();
-        if(isStatus()){
-            /*
-                Validação do campo
-            */
-            if(cpf.isBlank() || cpf.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Digite seu CPF");
-            }
-            else
-            {
-                this.cpf = cpf;
-            }
-            /*
-                Fim da validação do campo
-            */
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Para definir o cpf a conta deve estar aberta");
-        }
-        
     }
 
     public String getEndereco() {
@@ -205,37 +177,6 @@ public class Cliente {
     public void setUf(String uf) {
         uf = uf.trim();
         uf = uf.toUpperCase();
-        String[] estados = {
-            "AC", // Acre
-            "AL", // Alagoas
-            "AP", // Amapá
-            "AM", // Amazonas
-            "BA", // Bahia
-            "CE", // Ceará
-            "DF", // Distrito Federal
-            "ES", // Espírito Santo
-            "GO", // Goiás
-            "MA", // Maranhão
-            "MT", // Mato Grosso
-            "MS", // Mato Grosso do Sul
-            "MG", // Minas Gerais
-            "PA", // Pará
-            "PB", // Paraíba
-            "PR", // Paraná
-            "PE", // Pernambuco
-            "PI", // Piauí
-            "RJ", // Rio de Janeiro
-            "RN", // Rio Grande do Norte
-            "RS", // Rio Grande do Sul
-            "RO", // Rondônia
-            "RR", // Roraima
-            "SC", // Santa Catarina
-            "SP", // São Paulo
-            "SE", // Sergipe
-            "TO"  // Tocantins
-        };
-        
-        List<String> estadosList = Arrays.asList(estados);
         
         if(isStatus()){
             /*
@@ -245,13 +186,13 @@ public class Cliente {
             {
                 JOptionPane.showMessageDialog(null, "Escolha um Estado");
             }
-            else if(!estadosList.contains(uf))
+            else if(AtrValidator.isUf(uf))
             {
-                JOptionPane.showMessageDialog(null, "Estado inválido");
+                this.uf = uf;
             }
             else
             {
-                this.uf = uf;
+                JOptionPane.showMessageDialog(null, "Estado inválido");
             }
             /*
                 Fim da validação do campo
@@ -351,6 +292,29 @@ public class Cliente {
             JOptionPane.showMessageDialog(null, "Para definir o telefone a conta deve estar aberta");
         }
     }
+    
+      public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        cpf = cpf.trim();
+        if(isStatus()){
+            if(cpf.isBlank() || cpf.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Digite um CPF");
+            }
+            else if(AtrValidator.isCPF(cpf)){
+                this.cpf = cpf;
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Digite um CPF válido");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o CPF a conta deve estar aberta");
+        }
+        
+    }
 
     public String getCnpj() {
         return cnpj;
@@ -359,10 +323,18 @@ public class Cliente {
     public void setCnpj(String cnpj) {
         cnpj = cnpj.trim();
         if(isStatus()){
-            this.cnpj = cnpj;
+            if(cnpj.isBlank() || cnpj.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Digite o CNPJ");
+            }
+            else if(AtrValidator.isCNPJ(cnpj)){
+                this.cnpj = cnpj;
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Digite um CNPJ válido");
+            }
         }
         else{
-            JOptionPane.showMessageDialog(null, "Para definir o cnpj a conta deve estar aberta");
+            JOptionPane.showMessageDialog(null, "Para definir o CNPJ a conta deve estar aberta");
         }
     }
 

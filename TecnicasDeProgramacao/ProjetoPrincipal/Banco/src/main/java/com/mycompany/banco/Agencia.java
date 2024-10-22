@@ -4,6 +4,7 @@
  */
 package com.mycompany.banco;
 
+import Validator.AtrValidator;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -48,6 +49,7 @@ public class Agencia {
     }
 
     public void setNum_agencia(String num_agencia) {
+        num_agencia = num_agencia.trim();
         if(num_agencia.isBlank() || num_agencia.isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Digite o número da agência");
@@ -62,6 +64,7 @@ public class Agencia {
     }
 
     public void setNome(String nome) {
+        nome = nome.trim();
          if(nome.isBlank() || nome.isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Digite seu nome");
@@ -76,6 +79,7 @@ public class Agencia {
     }
 
     public void setEndereco(String endereco) {
+        endereco = endereco.trim();
          if(endereco.isBlank() || endereco.isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Digite o endereço");
@@ -90,6 +94,7 @@ public class Agencia {
     }
 
     public void setNumero(String numero) {
+        numero = numero.trim();
         this.numero = numero;
     }
 
@@ -98,6 +103,7 @@ public class Agencia {
     }
 
     public void setComplemento(String complemento) {
+        complemento = complemento.trim();
         this.complemento = complemento;
     }
 
@@ -106,6 +112,7 @@ public class Agencia {
     }
 
     public void setBairro(String bairro) {
+        bairro = bairro.trim();
         this.bairro = bairro;
     }
 
@@ -114,6 +121,7 @@ public class Agencia {
     }
 
     public void setCidade(String cidade) {
+        cidade = cidade.trim();
         this.cidade = cidade;
     }
 
@@ -124,38 +132,6 @@ public class Agencia {
     public void setUf(String uf) {
         uf = uf.trim();
         uf = uf.toUpperCase();
-        String[] estados = {
-            "AC", // Acre
-            "AL", // Alagoas
-            "AP", // Amapá
-            "AM", // Amazonas
-            "BA", // Bahia
-            "CE", // Ceará
-            "DF", // Distrito Federal
-            "ES", // Espírito Santo
-            "GO", // Goiás
-            "MA", // Maranhão
-            "MT", // Mato Grosso
-            "MS", // Mato Grosso do Sul
-            "MG", // Minas Gerais
-            "PA", // Pará
-            "PB", // Paraíba
-            "PR", // Paraná
-            "PE", // Pernambuco
-            "PI", // Piauí
-            "RJ", // Rio de Janeiro
-            "RN", // Rio Grande do Norte
-            "RS", // Rio Grande do Sul
-            "RO", // Rondônia
-            "RR", // Roraima
-            "SC", // Santa Catarina
-            "SP", // São Paulo
-            "SE", // Sergipe
-            "TO"  // Tocantins
-        };
-        
-        List<String> estadosList = Arrays.asList(estados);
-        
         /*
             Validação do campo
         */
@@ -163,13 +139,13 @@ public class Agencia {
         {
             JOptionPane.showMessageDialog(null, "Escolha um estado");
         }
-        else if(!estadosList.contains(uf))
+        else if(AtrValidator.isUf(uf))
         {
-            JOptionPane.showMessageDialog(null, "Estado inválido");
+            this.uf = uf;
         }
         else
         {
-            this.uf = uf;
+            JOptionPane.showMessageDialog(null, "Estado inválido");
         }
     }
 
@@ -178,6 +154,7 @@ public class Agencia {
     }
 
     public void setCep(String cep) {
+        cep = cep.trim();
         if(cep.isEmpty() || cep.isBlank()){
             JOptionPane.showMessageDialog(null,"Digite o CEP");
         }
@@ -191,11 +168,15 @@ public class Agencia {
     }
 
     public void setCnpj(String cnpj) {
-        if(cnpj.isEmpty() || cnpj.isBlank()){
-            JOptionPane.showMessageDialog(null,"Digite o CNPJ");
+        cnpj = cnpj.trim();
+        if(cnpj.isBlank() || cnpj.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o CNPJ");
+        }
+        else if(AtrValidator.isCNPJ(cnpj)){
+            this.cnpj = cnpj;
         }
         else{
-            this.cnpj = cnpj;
+            JOptionPane.showMessageDialog(null, "Digite um CNPJ válido");
         }
     }
 
@@ -204,6 +185,7 @@ public class Agencia {
     }
 
     public void setGerente(String gerente) {
+        gerente = gerente.trim();
         this.gerente = gerente;
     }
 }
