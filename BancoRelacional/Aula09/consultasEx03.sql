@@ -37,21 +37,24 @@ select quantidade_reservada = count(*) from FILME where RESERVADA = 's'
 select max(VALOR_LOCACAO) as 'Maior valor de locação' from FILME
 
 -- Ex13 Mostre todos os filmes cuja categoria seja Ação.
-select * from FILME f inner join CATEGORIA c on f.COD_CATEGORIA = c.COD_CATEGORIA where c.NOME_CATEGORIA = 'Ação'
+select * from FILME f inner join CATEGORIA c on f.COD_CATEGORIA = c.COD_CATEGORIA 
+where c.NOME_CATEGORIA = 'Ação'
 
 -- Ex14. Mostre todos os filmes cuja categoria seja Romance ou Aventura que já estão reservados e seu valor de locação seja menor que 5 reais.
-select * from FILME f inner join CATEGORIA c on f.COD_CATEGORIA = c.COD_CATEGORIA where (c.NOME_CATEGORIA = 'Romance' or c.NOME_CATEGORIA = 'Aventura') and f.VALOR_LOCACAO < 5 and f.RESERVADA = 's'
+select * from FILME f inner join CATEGORIA c on f.COD_CATEGORIA = c.COD_CATEGORIA 
+where (c.NOME_CATEGORIA = 'Romance' or c.NOME_CATEGORIA = 'Aventura') and f.VALOR_LOCACAO < 5 and f.RESERVADA = 's'
 
 -- Ex15. Mostre todos os filmes alugados pelo cliente Renata Cristina.
 select FILME as 'Filmes alugados pela Renata Cristina' from LOCACOES l 
 inner join FILME f on l.COD_FILME = f.COD_FILME 
-inner join CLIENTES c on l.COD_CLIENTE = c.COD_CLIENTE where NOME = 'Renata Cristina' 
+inner join CLIENTES c on l.COD_CLIENTE = c.COD_CLIENTE 
+where NOME = 'Renata Cristina' 
 
 -- Ex16. Mostre todos os clientes que já alugaram mais do que 3 filmes.
-select c.NOME, total_filmes = count(l.COD_CLIENTE) from LOCACOES l 
+select c.NOME, total_alugados = count(l.COD_CLIENTE) from LOCACOES l 
 inner join CLIENTES c on l.COD_CLIENTE = c.COD_CLIENTE
 group by c.NOME
-having count(c.NOME) > 3
+having count(*) > 3
 
 -- Ex17. Mostre quanto foi gasto pelo cliente Renata Cristina.
 select SUM(f.VALOR_LOCACAO) as 'Quantidade gasta pela cliente' from LOCACOES l 
@@ -60,16 +63,21 @@ inner join FILME f on l.COD_FILME = f.COD_FILME
 where c.NOME =  'Renata Cristina'
 
 -- Ex18. Mostre a média de valor de locação da locadora.
-select avg(f.VALOR_LOCACAO) from LOCACOES l
-inner join FILME f on f.COD_FILME = l.COD_FILME
+select AVG(f.VALOR_LOCACAO) as 'Média de valor de locação' from LOCACOES l
+inner join FILME f on l.COD_FILME = f.COD_FILME
 
 -- Ex19. Mostre o menor valor de locação da locadora.
-select min(f.VALOR_LOCACAO) from LOCACOES l
-inner join FILME f on f.COD_FILME = l.COD_FILME
-group by f.COD_FILME, f.VALOR_LOCACAO
+select min (Soma_Locacoes.total_locacao) as 'Menor valor de locação' 
+from 
+(select f.FILME,SUM(f.valor_locacao) as total_locacao
+from FILME f inner join locacoes l on f.COD_FILME = l.COD_FILME
+group by f.FILME) as Soma_Locacoes
+
+select * from LOCACOES where COD_FILME = 20
+select * from FILME where COD_FILME = 20
 
 -- Ex20. Mostre a quantidade de filme que a locadora possui por categoria.
-select count(*) from LOCACOES l
+select NOME_CATEGORIA, count(*) as 'Quantidade de filme por categoria' from LOCACOES l
 inner join FILME f on l.COD_FILME = f.COD_FILME
-inner join CATEGORIA cat on cat.COD_CATEGORIA = f.COD_CATEGORIA
-group by f.COD_CATEGORIA, l.COD_FILME
+inner join CATEGORIA c on c.COD_CATEGORIA = f.COD_CATEGORIA
+group by NOME_CATEGORIA
