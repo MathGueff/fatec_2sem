@@ -81,3 +81,7 @@ select NOME_CATEGORIA, count(*) as 'Quantidade de filme por categoria' from LOCA
 inner join FILME f on l.COD_FILME = f.COD_FILME
 inner join CATEGORIA c on c.COD_CATEGORIA = f.COD_CATEGORIA
 group by NOME_CATEGORIA
+
+select NOME_CATEGORIA, count(*) as 'Quantidade de filme por categoria' from FILME f
+inner join CATEGORIA c on c.COD_CATEGORIA = f.COD_CATEGORIA
+group by NOME_CATEGORIA

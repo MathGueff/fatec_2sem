@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Category } from '../models/category';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-category-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './category-bar.component.html',
   styleUrl: './category-bar.component.css'
 })

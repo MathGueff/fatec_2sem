@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Course } from '../models/course';
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -10,7 +10,20 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './course.component.html',
   styleUrl: './course.component.css'
 })
-export class CourseComponent {
+export class CourseComponent implements OnInit{
+
+  constructor(private activatedRoute : ActivatedRoute, private router : Router) {}
+
+  ngOnInit(): void {
+    this.updateCourses();
+  }
+
+  updateCourses(){
+    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.courses = this.courses.filter((course) => course.idCategory == id);
+    this.router.navigate(['/course', {id: id}])
+  }
+
   courses : Course[] = [
     {id:1,idCategory:1,title:'Pinchers',description : 'Aprenda sobre todos os pinchers e porque eles tremem tanto', cost: 250.00, image: 'assets/pincher_tremendo.jpg', duration:1200},
     {id:2,idCategory:2,title:'Doberman',description : 'Entenda porque eles são tão parecidos com o pincher da foto', cost: 12000.00, image: 'assets/doberman_e_pincher.jpg', duration:1},
