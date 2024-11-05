@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  titulosite = "EXTENSÕES CACHORROS";
+  titulosite = "CACHORROS";
   menuusuario = false
 }

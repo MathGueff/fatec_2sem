@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
   --background: #e4e4e4;
+
+  --cor-primaria: #fa894f;
+
+  --cor-secundaria: #15a1d4;
+  --cor-terciaria: #a5f2fa;
+  --cor-quaternaria: #dc2277;
+  --cor-quintenaria: #442372;
 }
+/*
+#fa894f
+
+#15a1d4
+
+#a5f2fa
+
+#dc2277
+
+#442372
+*/

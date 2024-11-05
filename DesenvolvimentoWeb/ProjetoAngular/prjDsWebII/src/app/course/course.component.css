@@ -1,7 +1,3 @@
-.card-content{
-  margin-top: 65px;
-}
-
 .truncated-text{
   max-width: 100%;
   text-overflow: ellipsis;
@@ -21,14 +17,11 @@
 }
 
 .btn-primary{
-  background-color: rgb(221, 226, 230);
-  color: rgb(104, 6, 149);
-  border-color: aliceblue;
+  background-color: var(--cor-primaria);
+  color: var(--cor-quintenaria);
+  border: var(--cor-primaria);
 }
 
 .btn-primary:hover{
-  background-color: rgb(221, 226, 230);
-  color: rgb(104, 6, 149);
-  border-color: aliceblue;
   opacity: 0.5;
 }

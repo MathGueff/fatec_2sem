@@ -1,0 +1,4 @@
+Array -> Estático, usamos []
+Lista -> Podemos alterar dinamicamente
+Lista encadeada -> Utiliza nós para navegar e alterar a lista, se baseando nos nós e seu atributo "próximo nó"
+Pilha -> Trabalha baseado no TOPO, o topo é o último nó adicionado

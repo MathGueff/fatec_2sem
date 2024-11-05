@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Course } from '../models/course';
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { ICourse } from './course.model';
 
 @Component({
   selector: 'app-courses',
@@ -12,16 +14,18 @@ import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/rou
 })
 export class CourseComponent implements OnInit{
 
+  private courseSubject : BehaviorSubject<ICourse[]> = new BehaviorSubject([] as any);
+  data$: Observable<ICourse[]> = this.courseSubject.asObservable();
   constructor(private activatedRoute : ActivatedRoute, private router : Router) {}
 
   ngOnInit(): void {
-    this.updateCourses();
-  }
-
-  updateCourses(){
-    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.courses = this.courses.filter((course) => course.idCategory == id);
-    this.router.navigate(['/course', {id: id}])
+    this.activatedRoute.params.subscribe((params) => {
+      const id = params['id'];
+      const courses = this.courses.filter((course) => {
+          course.idCategory === Number(id);
+      })
+      this.courseSubject.next(courses);
+    })
   }
 
   courses : Course[] = [
