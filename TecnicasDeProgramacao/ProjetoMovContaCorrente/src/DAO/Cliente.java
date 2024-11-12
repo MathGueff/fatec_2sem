@@ -29,13 +29,22 @@ public class Cliente {
     private String telefone;
     private String cnpj;
     private char sexo;
+
+    public String getDataNascimento() {
+        return DataNascimento;
+    }
+
+    public void setDataNascimento(String DataNascimento) {
+        this.DataNascimento = DataNascimento;
+    }
+    private String DataNascimento;
     
     public Cliente(){
         this.status = true;
         //Construtor vazio para criação livre
     }
 
-    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo) {
+    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento) {
         this.id_cli = id_cli;
         this.nome = nome;
         this.cpf = cpf;
@@ -50,6 +59,7 @@ public class Cliente {
         this.cnpj = cnpj;
         this.sexo = sexo;
         this.status = true;
+        this.DataNascimento = "2022-10-11";
     }
     
     public int getId_cli() {
@@ -356,5 +366,25 @@ public class Cliente {
         else{
             JOptionPane.showMessageDialog(null, "Para definir o sexo a conta deve estar aberta");
         }
+    }
+    
+    public String dadosSQLValues(){
+        String dadosClientes;
+        dadosClientes = "'"
+            + this.getId_cli() + "','"
+            + this.getNome()+ "','"
+            + this.getEndereco()+ "','"
+            + this.getNumero() + "','"
+            + this.getEndereco()+ "','" //Preciso adicionar complemento
+            + this.getBairro()+ "','"
+            + this.getCidade() + "','"
+            + this.getUf() + "','"
+            + this.getCep()+ "','"
+            + this.getTelefone()+ "','"
+            + this.getCpf()+ "', 2022-10-11'," 
+            //+ this.getNome()+ "','" //Preciso adicionar data
+            + this.getCnpj()+ "'";
+        return dadosClientes;
+                
     }
 }

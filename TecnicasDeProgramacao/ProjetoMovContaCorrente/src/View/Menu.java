@@ -30,6 +30,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -50,7 +51,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu1.setText("Clientes");
 
-        jMenuItem1.setText("Acessar");
+        jMenuItem1.setText("Incluir");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -58,8 +59,16 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Consultar");
+        jMenuItem2.setText("Alterar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
+
+        jMenuItem13.setText("Excluir");
+        jMenu1.add(jMenuItem13);
 
         jMenuBar1.add(jMenu1);
 
@@ -155,7 +164,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Clientes acesso_cliente = new Clientes();
+        String operacao = "Incluir";
+        Clientes acesso_cliente = new Clientes(operacao);
         acesso_cliente.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -183,6 +193,12 @@ public class Menu extends javax.swing.JFrame {
         Usuarios acesso_usuario = new Usuarios();
         acesso_usuario.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        String operacao = "Alterar";
+        Clientes acesso_cliente = new Clientes(operacao);
+        acesso_cliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +248,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

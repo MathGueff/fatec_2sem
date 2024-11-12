@@ -21,10 +21,10 @@ export class CourseComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
-      const courses = this.courses.filter((course) => {
-          course.idCategory === Number(id);
-      })
-      this.courseSubject.next(courses);
+      const list = this.courses.filter(
+        (course) => course.idCategory == Number(id)
+      );
+      this.courseSubject.next(list);
     })
   }
 

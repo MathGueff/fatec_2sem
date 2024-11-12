@@ -21,7 +21,7 @@ public class Banco {
         //Historico h = new Historico(0, "historico");
         //h.setId_his(0);
         
-        Cliente cli = new Cliente(0, "nome", "0", "endereco", "numero", "bairro", "cidade", "0", "0", "email", "telefone", "0", '0');
+        //Cliente cli = new Cliente(0, "nome", "0", "endereco", "numero", "bairro", "cidade", "0", "0", "email", "telefone", "0", '0');
         //cli.setId_cli(1);
         //System.out.println(cli.getId_cli());
         //cli.setStatus(false);
