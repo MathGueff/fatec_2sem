@@ -216,7 +216,7 @@ public class Clientes extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Estado do Cliente");
 
-        JComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ESTADO", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        JComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
         JRadioButton1.setText("Feminino");
         JRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -418,8 +418,9 @@ public class Clientes extends javax.swing.JFrame {
                 default:
                     JOptionPane.showMessageDialog(null, "Digite o CPF ou CNPJ");
             }
-            
-            c.setUf(JComboBox.getSelectedItem().toString());
+            if(JComboBox.getSelectedItem().toString() != "ESTADO"){
+                c.setUf(JComboBox.getSelectedItem().toString());
+            }
             c.setSexo(sexoSelecionado);
             JOptionPane.showMessageDialog(null, "Cadastrado");
             

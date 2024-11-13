@@ -370,20 +370,20 @@ public class Cliente {
     
     public String dadosSQLValues(){
         String dadosClientes;
-        dadosClientes = "'"
-            + this.getId_cli() + "','"
-            + this.getNome()+ "','"
-            + this.getEndereco()+ "','"
-            + this.getNumero() + "','"
-            + this.getEndereco()+ "','" //Preciso adicionar complemento
-            + this.getBairro()+ "','"
-            + this.getCidade() + "','"
-            + this.getUf() + "','"
-            + this.getCep()+ "','"
-            + this.getTelefone()+ "','"
-            + this.getCpf()+ "', 2022-10-11'," 
-            //+ this.getNome()+ "','" //Preciso adicionar data
-            + this.getCnpj()+ "'";
+        dadosClientes = 
+            "'" + this.getId_cli() + "'" + "," +
+            "'" + this.getNome()+ "'" + "," +
+            "'" + this.getEndereco()+ "'" + "," +
+            "'" + this.getNumero()+ "'" + "," +
+            "'Complemento'" + "," + //Add complemento ao form dps
+            "'" + this.getBairro()+ "'" + "," +
+            "'" + this.getCidade()+ "'" + "," +
+            "'" + this.getUf() + "'" + "," +
+            "'" + this.getCep()+ "'" + "," +
+            "'" + this.getTelefone()+ "'" + "," +
+            "'" + this.getCpf()+ "'" + "," +
+            " getdate()" + "," + //Add complemento ao form dps
+            "'" + this.getCnpj()+ "'";
         return dadosClientes;
                 
     }
