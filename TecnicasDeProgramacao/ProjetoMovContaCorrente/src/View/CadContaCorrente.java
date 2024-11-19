@@ -4,6 +4,7 @@
  */
 package View;
 import DAO.ContaCorrente;
+import DAO.connectDAO;
 import javax.swing.JOptionPane;
 /**
  *
@@ -18,6 +19,38 @@ public class CadContaCorrente extends javax.swing.JFrame {
         initComponents();
     }
     
+    String operacaoAtivaGlobal = "Nenhum";
+    
+    public CadContaCorrente(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(false);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jTextField1.setVisible(false);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
+        operacao = "Alterar";
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+            jButton1.setText(operacaoAtivaGlobal + " BD");;
+        }
+    }
+    
     ContaCorrente cc = new ContaCorrente();
 
     /**
@@ -29,7 +62,7 @@ public class CadContaCorrente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_Gravar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         btn_Limpar = new javax.swing.JButton();
         btn_Ler = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -43,10 +76,10 @@ public class CadContaCorrente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        btn_Gravar.setText("Gravar");
-        btn_Gravar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Gravar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_GravarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -78,7 +111,7 @@ public class CadContaCorrente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(btn_Gravar)
+                .addComponent(jButton1)
                 .addGap(73, 73, 73)
                 .addComponent(btn_Limpar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
@@ -86,24 +119,24 @@ public class CadContaCorrente extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
                 .addGap(92, 92, 92)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +159,7 @@ public class CadContaCorrente extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Gravar)
+                    .addComponent(jButton1)
                     .addComponent(btn_Limpar)
                     .addComponent(btn_Ler))
                 .addContainerGap())
@@ -135,27 +168,35 @@ public class CadContaCorrente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cc.setNum_conta(jTextField1.getText());
         cc.setNum_agencia(jTextField2.getText());
         cc.setId_cli(jTextField3.getText().isEmpty() || jTextField3.getText().isBlank()? 0 : Integer.parseInt(jTextField3.getText().trim()));
         cc.setSaldo(jTextField4.getText().isEmpty() || jTextField4.getText().isBlank() ? 0 : Double.parseDouble(jTextField4.getText().trim()));
         JOptionPane.showMessageDialog(null, "Cadastrado ");
-        btn_LimparActionPerformed(evt);
-    }//GEN-LAST:event_btn_GravarActionPerformed
+        
+        connectDAO objcon = new connectDAO();
+        objcon.connectDB();
+        objcon.insereRegistroJFBD("CONTACORRENTE", cc.dadosSQLValues());
 
-    private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jTextField4.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
+//        jTextField1.setText("");
+//        jTextField2.setText("");
+//        jTextField3.setText("");
+//        jTextField4.setText("");
     }//GEN-LAST:event_btn_LimparActionPerformed
 
     private void btn_LerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LerActionPerformed
-        jTextField1.setText(cc.getNum_conta());
-        jTextField2.setText(cc.getNum_agencia());
-        jTextField3.setText(Integer.toString(cc.getId_cli()));
-        jTextField4.setText(Double.toString(cc.getSaldo()));
+//        jTextField1.setText(cc.getNum_conta());
+//        jTextField2.setText(cc.getNum_agencia());
+//        jTextField3.setText(Integer.toString(cc.getId_cli()));
+//        jTextField4.setText(Double.toString(cc.getSaldo()));
     }//GEN-LAST:event_btn_LerActionPerformed
 
     /**
@@ -195,9 +236,9 @@ public class CadContaCorrente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Gravar;
     private javax.swing.JButton btn_Ler;
     private javax.swing.JButton btn_Limpar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

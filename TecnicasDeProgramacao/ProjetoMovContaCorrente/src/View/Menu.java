@@ -34,18 +34,23 @@ public class Menu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,7 +79,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu2.setText("Agencias");
 
-        jMenuItem3.setText("Acessar");
+        jMenuItem3.setText("Incluir");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -82,14 +87,17 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem3);
 
-        jMenuItem4.setText("Consultar");
+        jMenuItem4.setText("Alterar");
         jMenu2.add(jMenuItem4);
+
+        jMenuItem14.setText("Excluir");
+        jMenu2.add(jMenuItem14);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("ContaCorrente");
 
-        jMenuItem5.setText("Acessar");
+        jMenuItem5.setText("Incluir");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -97,14 +105,17 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem5);
 
-        jMenuItem6.setText("Consultar");
+        jMenuItem6.setText("Alterar");
         jMenu3.add(jMenuItem6);
+
+        jMenuItem15.setText("Excluir");
+        jMenu3.add(jMenuItem15);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Historicos");
 
-        jMenuItem7.setText("Acessar");
+        jMenuItem7.setText("Incluir");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
@@ -112,14 +123,17 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem7);
 
-        jMenuItem8.setText("Consultar");
+        jMenuItem8.setText("Alterar");
         jMenu4.add(jMenuItem8);
+
+        jMenuItem16.setText("Excluir");
+        jMenu4.add(jMenuItem16);
 
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Movimentação");
 
-        jMenuItem9.setText("Acessar");
+        jMenuItem9.setText("Incluir");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem9ActionPerformed(evt);
@@ -127,14 +141,17 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem9);
 
-        jMenuItem10.setText("Consultar");
+        jMenuItem10.setText("Alterar");
         jMenu5.add(jMenuItem10);
+
+        jMenuItem17.setText("Excluir");
+        jMenu5.add(jMenuItem17);
 
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Usuarios");
 
-        jMenuItem11.setText("Acessar");
+        jMenuItem11.setText("Incluir");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem11ActionPerformed(evt);
@@ -142,8 +159,11 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem11);
 
-        jMenuItem12.setText("Consultar");
+        jMenuItem12.setText("Alterar");
         jMenu6.add(jMenuItem12);
+
+        jMenuItem18.setText("Excluir");
+        jMenu6.add(jMenuItem18);
 
         jMenuBar1.add(jMenu6);
 
@@ -164,28 +184,37 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        //Cliente
         String operacao = "Incluir";
         Clientes acesso_cliente = new Clientes(operacao);
         acesso_cliente.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Agencias acesso_agencia = new Agencias();
+        //Agencia
+        String operacao = "Incluir";
+        Agencias acesso_agencia = new Agencias(operacao);
         acesso_agencia.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        CadContaCorrente acesso_conta_corrente = new CadContaCorrente();
+        //Conta corrente
+        String operacao = "Incluir";
+        CadContaCorrente acesso_conta_corrente = new CadContaCorrente(operacao);
         acesso_conta_corrente.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        CadHistorico acesso_historico = new CadHistorico();
+        //Históricos
+        String operacao = "Incluir";
+        CadHistorico acesso_historico = new CadHistorico(operacao);
         acesso_historico.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        CadMovimentacao acesso_movimentacao = new CadMovimentacao();
+        //Movimentação
+        String operacao = "Incluir";
+        CadMovimentacao acesso_movimentacao = new CadMovimentacao(operacao);
         acesso_movimentacao.setVisible(true);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
@@ -249,6 +278,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

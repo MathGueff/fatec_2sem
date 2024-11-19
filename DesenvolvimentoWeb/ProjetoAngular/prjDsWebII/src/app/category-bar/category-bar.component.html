@@ -3,17 +3,11 @@
     <div class="col-lg-2 col-sm-4 mt-1 mb-1" *ngFor="let category of categories">
       <ul class="list-group">
         <li class="card-category d-flex">
-          <a routerLink="/course/{{category.id}}">
-            <div class="card-img">
-              <img src="{{category.image}}" alt="user-image">
-            </div>
-            <div class="card-info">
-              <span>{{category.title}}</span>
-            </div>
-          </a>
+          <app-category-card (selectCategoryEvent)="this.setCategorySelected($event)" [category]="category"></app-category-card>
         </li>
       </ul>
     </div>
   </div>
-  <button class="btn btn-info" routerLink="/category/new">Novo</button>
+  <p>Categoria selecionada: <b>{{categorySelected}}</b></p>
+  <button class="btn btn-info mb-2 mt-2" routerLink="/category/new">Novo</button>
 </div>

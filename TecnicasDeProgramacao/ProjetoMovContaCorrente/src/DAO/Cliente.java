@@ -29,14 +29,7 @@ public class Cliente {
     private String telefone;
     private String cnpj;
     private char sexo;
-
-    public String getDataNascimento() {
-        return DataNascimento;
-    }
-
-    public void setDataNascimento(String DataNascimento) {
-        this.DataNascimento = DataNascimento;
-    }
+    private String complemento;
     private String DataNascimento;
     
     public Cliente(){
@@ -44,7 +37,7 @@ public class Cliente {
         //Construtor vazio para criação livre
     }
 
-    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento) {
+    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento, String complemento) {
         this.id_cli = id_cli;
         this.nome = nome;
         this.cpf = cpf;
@@ -60,6 +53,7 @@ public class Cliente {
         this.sexo = sexo;
         this.status = true;
         this.DataNascimento = "2022-10-11";
+        this.complemento = complemento;
     }
     
     public int getId_cli() {
@@ -78,6 +72,60 @@ public class Cliente {
         }
         else{
             JOptionPane.showMessageDialog(null, "Para definir um ID a conta deve estar aberta");
+        }
+    }
+    
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        complemento = complemento.trim();
+        if(isStatus()){
+            /*
+                Validação do campo
+            */
+            if(complemento.isBlank() || complemento.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "Digite seu nome");
+            }
+            else
+            { 
+                this.complemento = complemento;
+            }
+            /*
+                Fim da validação do campo
+            */
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o nome a conta deve estar aberta");
+        }
+    }
+
+    public String getDataNascimento() {
+        return DataNascimento;
+    }
+
+    public void setDataNascimento(String DataNascimento) {
+        DataNascimento = DataNascimento.trim();
+        if(isStatus()){
+            /*
+                Validação do campo
+            */
+            if(DataNascimento.isBlank() || DataNascimento.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "Digite seu nome");
+            }
+            else
+            { 
+                this.DataNascimento = DataNascimento;
+            }
+            /*
+                Fim da validação do campo
+            */
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir o nome a conta deve estar aberta");
         }
     }
 
@@ -371,18 +419,17 @@ public class Cliente {
     public String dadosSQLValues(){
         String dadosClientes;
         dadosClientes = 
-            "'" + this.getId_cli() + "'" + "," +
             "'" + this.getNome()+ "'" + "," +
             "'" + this.getEndereco()+ "'" + "," +
             "'" + this.getNumero()+ "'" + "," +
-            "'Complemento'" + "," + //Add complemento ao form dps
+            "'" + this.getComplemento()+ "'" + "," +
             "'" + this.getBairro()+ "'" + "," +
             "'" + this.getCidade()+ "'" + "," +
             "'" + this.getUf() + "'" + "," +
             "'" + this.getCep()+ "'" + "," +
             "'" + this.getTelefone()+ "'" + "," +
             "'" + this.getCpf()+ "'" + "," +
-            " getdate()" + "," + //Add complemento ao form dps
+            "'" + this.getDataNascimento()+ "'" + "," +
             "'" + this.getCnpj()+ "'";
         return dadosClientes;
                 

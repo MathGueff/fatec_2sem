@@ -51,4 +51,11 @@ public class Historico {
             this.historico = historico;
         }
     }
+    
+    public String dadosSQLValues(){
+        String dadosHistorico;
+        dadosHistorico = 
+            "'" + this.getHistorico()+ "'";
+        return dadosHistorico;
+    }
 }

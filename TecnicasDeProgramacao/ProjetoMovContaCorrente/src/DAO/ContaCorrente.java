@@ -85,4 +85,13 @@ public class ContaCorrente{
             JOptionPane.showMessageDialog(null, "Digite um saldo válido");
         }
     }
+    
+    public String dadosSQLValues(){
+        String dadosContaCorrente;
+        dadosContaCorrente = 
+            "'" + this.getNum_agencia()+ "'," +
+            "'" + this.getId_cli()+ "'," +   
+            "'" + this.getSaldo()+ "'";
+        return dadosContaCorrente;        
+    }
 }

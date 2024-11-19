@@ -5,6 +5,7 @@
 package View;
 
 import DAO.Movimentacao;
+import DAO.connectDAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,55 @@ public class CadMovimentacao extends javax.swing.JFrame {
      */
     public CadMovimentacao() {
         initComponents();
+    }
+    
+    String operacaoAtivaGlobal = "Nenhum";
+    public CadMovimentacao(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            jLabel8.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jTextField5.setVisible(true);
+            jTextField6.setVisible(true);
+            jTextField7.setVisible(true);
+            jRadioButton1.setVisible(true);
+            jRadioButton2.setVisible(true);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
+        operacao = "Alterar";
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(false);
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jLabel5.setVisible(false);
+            jLabel6.setVisible(false);
+            jLabel7.setVisible(false);
+            jLabel8.setVisible(false);
+            jTextField1.setVisible(false);
+            jTextField2.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+            jTextField5.setVisible(false);
+            jTextField6.setVisible(false);
+            jTextField7.setVisible(false);
+            jRadioButton1.setVisible(false);
+            jRadioButton2.setVisible(false);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
     }
 
     Movimentacao m = new Movimentacao();
@@ -51,7 +101,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
-        btnGravar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnLer = new javax.swing.JButton();
 
@@ -89,10 +139,10 @@ public class CadMovimentacao extends javax.swing.JFrame {
 
         jLabel9.setText("Saldo");
 
-        btnGravar.setText("Gravar");
-        btnGravar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Gravar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGravarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -116,7 +166,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnGravar)
+                .addComponent(jButton1)
                 .addGap(108, 108, 108)
                 .addComponent(btnLimpar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -208,7 +258,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGravar)
+                    .addComponent(jButton1)
                     .addComponent(btnLimpar)
                     .addComponent(btnLer))
                 .addContainerGap())
@@ -217,7 +267,7 @@ public class CadMovimentacao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         m.setNum_conta(jTextField1.getText());
         m.setNum_age(jTextField2.getText());
         m.setDocumento(jTextField3.getText());
@@ -228,8 +278,23 @@ public class CadMovimentacao extends javax.swing.JFrame {
         m.setSaldo(jTextField7.getText().isBlank() || jTextField7.getText().isEmpty()? 0 : Double.parseDouble(jTextField7.getText()));
         m.setValor(jTextField8.getText().isBlank() || jTextField8.getText().isEmpty()? 0 : Double.parseDouble(jTextField8.getText()));
         JOptionPane.showMessageDialog(null, "Cadastrado");
-        btnLimparActionPerformed(evt);
-    }//GEN-LAST:event_btnGravarActionPerformed
+        
+        connectDAO objcon = new connectDAO();
+        objcon.connectDB();
+        objcon.insereRegistroJFBD("MOVIMENTACAO", m.dadosSQLValues());
+
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        tipoCartao = "";
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
        if(jRadioButton1.isSelected())
@@ -248,17 +313,17 @@ public class CadMovimentacao extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
-        jTextField6.setText("");
-        jTextField7.setText("");
-        jTextField8.setText("");
-        jRadioButton1.setSelected(false);
-        jRadioButton2.setSelected(false);
-        tipoCartao = "";
+//        jTextField1.setText("");
+//        jTextField2.setText("");
+//        jTextField3.setText("");
+//        jTextField4.setText("");
+//        jTextField5.setText("");
+//        jTextField6.setText("");
+//        jTextField7.setText("");
+//        jTextField8.setText("");
+//        jRadioButton1.setSelected(false);
+//        jRadioButton2.setSelected(false);
+//        tipoCartao = "";
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnLerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLerActionPerformed
@@ -321,9 +386,9 @@ public class CadMovimentacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGravar;
     private javax.swing.JButton btnLer;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -155,4 +155,20 @@ public class Movimentacao {
             this.saldo = saldo;
         }
     }
+    
+     public String dadosSQLValues(){
+        String dadosMovimentacao;
+        dadosMovimentacao = 
+            "'" + this.getNum_age()+ "'," +
+            "'" + this.getNum_conta()+ "'," +
+            "'" + this.getData_mov()+ "'," +
+            "'" + this.getNum_age()+ "'," +
+            "'" + this.getDocumento()+ "'," +
+            "'" + this.getCreditoDebito()+ "'," +
+            "'" + this.getId_his()+ "'," +
+            "'" + this.getCompl_hist()+ "'," +
+            "'" + this.getValor()+ "'," +
+            "'" + this.getSaldo()+ "'";
+        return dadosMovimentacao;
+    }
 }

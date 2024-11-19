@@ -4,7 +4,9 @@
  */
 package View;
 import DAO.Agencia;
+import DAO.connectDAO;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 /**
  *
  * @author Alunos
@@ -16,6 +18,65 @@ public class Agencias extends javax.swing.JFrame {
      */
     public Agencias() {
         initComponents();
+    }
+    String operacaoAtivaGlobal = "Nenhum";
+    
+    public Agencias(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(false);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            jLabel8.setVisible(true);
+            jLabel9.setVisible(true);
+            jLabel10.setVisible(true);
+            jLabel11.setVisible(true);
+            JTextField1.setVisible(false);
+            JTextField2.setVisible(true);
+            JTextField3.setVisible(true);
+            JTextField4.setVisible(true);
+            JTextField5.setVisible(true);
+            JTextField6.setVisible(true);
+            JTextField7.setVisible(true);
+            JTextField8.setVisible(true);
+            JTextField9.setVisible(true);
+            JTextField10.setVisible(true);
+            jComboBox1.setVisible(true);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
+        operacao = "Alterar";
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jLabel5.setVisible(false);
+            jLabel6.setVisible(false);
+            jLabel7.setVisible(false);
+            jLabel8.setVisible(false);
+            jLabel9.setVisible(false);
+            jLabel10.setVisible(false);
+            jLabel11.setVisible(false);
+            JTextField1.setVisible(true);
+            JTextField2.setVisible(false);
+            JTextField3.setVisible(false);
+            JTextField4.setVisible(false);
+            JTextField5.setVisible(false);
+            JTextField6.setVisible(false);
+            JTextField7.setVisible(false);
+            JTextField8.setVisible(false);
+            JTextField9.setVisible(false);
+            JTextField10.setVisible(false);
+            jComboBox1.setVisible(false);
+            jButton1.setText(operacaoAtivaGlobal + " BD");;
+        }
     }
     
     Agencia agencia_jframe = new Agencia();
@@ -29,60 +90,60 @@ public class Agencias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_nomeAgencia = new javax.swing.JLabel();
-        lbl_endereco = new javax.swing.JLabel();
-        txtField_nomeAgencia = new javax.swing.JTextField();
-        txtField_endereco = new javax.swing.JTextField();
-        txtField_numero = new javax.swing.JTextField();
-        btn_Gravar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JTextField2 = new javax.swing.JTextField();
+        JTextField3 = new javax.swing.JTextField();
+        JTextField4 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         btn_Ler = new javax.swing.JButton();
-        txtField_complemento = new javax.swing.JTextField();
-        txtField_bairro = new javax.swing.JTextField();
-        txtField_cidade = new javax.swing.JTextField();
-        txtField_cep = new javax.swing.JTextField();
-        txtField_cnpj = new javax.swing.JTextField();
-        txtField_gerente = new javax.swing.JTextField();
+        JTextField5 = new javax.swing.JTextField();
+        JTextField6 = new javax.swing.JTextField();
+        JTextField7 = new javax.swing.JTextField();
+        JTextField8 = new javax.swing.JTextField();
+        JTextField9 = new javax.swing.JTextField();
+        JTextField10 = new javax.swing.JTextField();
         btn_Limpar = new javax.swing.JButton();
-        lbl_numero = new javax.swing.JLabel();
-        lbl_complemento = new javax.swing.JLabel();
-        lbl_bairro = new javax.swing.JLabel();
-        lbl_cidade = new javax.swing.JLabel();
-        lbl_cep = new javax.swing.JLabel();
-        lbl_cnpj = new javax.swing.JLabel();
-        lbl_gerente = new javax.swing.JLabel();
-        combo_uf = new javax.swing.JComboBox<>();
-        lbl_gerente1 = new javax.swing.JLabel();
-        lbl_nomeAgencia1 = new javax.swing.JLabel();
-        txtField_nomeAgencia1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        JTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        lbl_nomeAgencia.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_nomeAgencia.setText("Nome da Agência");
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Nome da Agência");
 
-        lbl_endereco.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_endereco.setText("Endereço da Agência");
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Endereço da Agência");
 
-        txtField_nomeAgencia.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_nomeAgencia.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_nomeAgencia.addActionListener(new java.awt.event.ActionListener() {
+        JTextField2.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField2.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtField_nomeAgenciaActionPerformed(evt);
+                JTextField2ActionPerformed(evt);
             }
         });
 
-        txtField_endereco.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_endereco.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField3.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField3.setForeground(new java.awt.Color(51, 51, 51));
 
-        txtField_numero.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_numero.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_numero.setToolTipText("");
+        JTextField4.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField4.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField4.setToolTipText("");
 
-        btn_Gravar.setText("Gravar");
-        btn_Gravar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Gravar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_GravarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -93,29 +154,29 @@ public class Agencias extends javax.swing.JFrame {
             }
         });
 
-        txtField_complemento.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_complemento.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_complemento.setToolTipText("");
+        JTextField5.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField5.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField5.setToolTipText("");
 
-        txtField_bairro.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_bairro.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_bairro.setToolTipText("");
+        JTextField6.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField6.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField6.setToolTipText("");
 
-        txtField_cidade.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_cidade.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_cidade.setToolTipText("");
+        JTextField7.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField7.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField7.setToolTipText("");
 
-        txtField_cep.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_cep.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_cep.setToolTipText("");
+        JTextField8.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField8.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField8.setToolTipText("");
 
-        txtField_cnpj.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_cnpj.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_cnpj.setToolTipText("");
+        JTextField9.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField9.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField9.setToolTipText("");
 
-        txtField_gerente.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_gerente.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_gerente.setToolTipText("");
+        JTextField10.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField10.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField10.setToolTipText("");
 
         btn_Limpar.setText("Limpar");
         btn_Limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,46 +185,46 @@ public class Agencias extends javax.swing.JFrame {
             }
         });
 
-        lbl_numero.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_numero.setText("Número da Agência");
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Número da Agência");
 
-        lbl_complemento.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_complemento.setText("Complemento da Agência");
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Complemento da Agência");
 
-        lbl_bairro.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_bairro.setText("Bairro da Agência");
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Bairro da Agência");
 
-        lbl_cidade.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_cidade.setText("Cidade da Agência");
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Cidade da Agência");
 
-        lbl_cep.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_cep.setText("CEP da Agência");
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("CEP da Agência");
 
-        lbl_cnpj.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_cnpj.setText("CNPJ da Agência");
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("CNPJ da Agência");
 
-        lbl_gerente.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_gerente.setText("Gerente da Agência");
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Gerente da Agência");
 
-        combo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ESTADO", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        combo_uf.setToolTipText("");
-        combo_uf.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        jComboBox1.setToolTipText("");
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_ufActionPerformed(evt);
+                jComboBox1ActionPerformed(evt);
             }
         });
 
-        lbl_gerente1.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_gerente1.setText("Estado da Agência");
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Estado da Agência");
 
-        lbl_nomeAgencia1.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_nomeAgencia1.setText("Id da Agência");
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Id da Agência");
 
-        txtField_nomeAgencia1.setBackground(new java.awt.Color(204, 204, 204));
-        txtField_nomeAgencia1.setForeground(new java.awt.Color(51, 51, 51));
-        txtField_nomeAgencia1.addActionListener(new java.awt.event.ActionListener() {
+        JTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField1.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtField_nomeAgencia1ActionPerformed(evt);
+                JTextField1ActionPerformed(evt);
             }
         });
 
@@ -175,10 +236,10 @@ public class Agencias extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_nomeAgencia1)
+                        .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_Gravar)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                         .addComponent(btn_Limpar)
                         .addGap(107, 107, 107)
@@ -186,30 +247,30 @@ public class Agencias extends javax.swing.JFrame {
                         .addGap(20, 20, 20))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_bairro)
-                            .addComponent(lbl_nomeAgencia)
-                            .addComponent(lbl_endereco)
-                            .addComponent(lbl_numero)
-                            .addComponent(lbl_complemento)
-                            .addComponent(lbl_cidade)
-                            .addComponent(lbl_cep)
-                            .addComponent(lbl_cnpj)
-                            .addComponent(lbl_gerente)
-                            .addComponent(lbl_gerente1))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(combo_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtField_gerente, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_cep, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_endereco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_nomeAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtField_nomeAgencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(JTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -217,51 +278,51 @@ public class Agencias extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_nomeAgencia1)
-                    .addComponent(txtField_nomeAgencia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(JTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_nomeAgencia)
-                    .addComponent(txtField_nomeAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_endereco)
-                    .addComponent(txtField_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3)
+                    .addComponent(JTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtField_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_numero))
+                    .addComponent(JTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_complemento))
+                    .addComponent(JTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtField_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_bairro))
+                    .addComponent(JTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtField_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_cidade))
+                    .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtField_cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_cep))
+                    .addComponent(JTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtField_cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_cnpj))
+                    .addComponent(JTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtField_gerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_gerente))
+                    .addComponent(JTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_gerente1)
-                    .addComponent(combo_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Gravar)
+                    .addComponent(jButton1)
                     .addComponent(btn_Limpar)
                     .addComponent(btn_Ler))
                 .addContainerGap())
@@ -270,58 +331,72 @@ public class Agencias extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtField_nomeAgenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_nomeAgenciaActionPerformed
+    private void JTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextField2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtField_nomeAgenciaActionPerformed
+    }//GEN-LAST:event_JTextField2ActionPerformed
 
-    private void btn_GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GravarActionPerformed
-        agencia_jframe.setNome(txtField_nomeAgencia.getText());
-        agencia_jframe.setEndereco(txtField_endereco.getText());
-        agencia_jframe.setNumero(txtField_numero.getText());
-        agencia_jframe.setComplemento(txtField_complemento.getText());
-        agencia_jframe.setBairro(txtField_bairro.getText());
-        agencia_jframe.setCidade(txtField_cidade.getText());
-        agencia_jframe.setCep(txtField_cep.getText());
-        agencia_jframe.setCnpj(txtField_cnpj.getText());
-        agencia_jframe.setGerente(txtField_gerente.getText());
-        agencia_jframe.setUf(combo_uf.getSelectedItem().toString());
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        agencia_jframe.setNome(JTextField2.getText());
+        agencia_jframe.setEndereco(JTextField3.getText());
+        agencia_jframe.setNumero(JTextField4.getText());
+        agencia_jframe.setComplemento(JTextField5.getText());
+        agencia_jframe.setBairro(JTextField6.getText());
+        agencia_jframe.setCidade(JTextField7.getText());
+        agencia_jframe.setCep(JTextField8.getText());
+        agencia_jframe.setCnpj(JTextField9.getText());
+        agencia_jframe.setGerente(JTextField10.getText());
+        agencia_jframe.setUf(jComboBox1.getSelectedItem().toString());
         JOptionPane.showMessageDialog(null, "Cadastrado ");
-        btn_LimparActionPerformed(evt);
-    }//GEN-LAST:event_btn_GravarActionPerformed
+         //Inserção no banco de dados
+            connectDAO objcon = new connectDAO();
+            objcon.connectDB();
+            objcon.insereRegistroJFBD("AGENCIAS", agencia_jframe.dadosSQLValues());
+            
+            JTextField2.setText("");
+            JTextField3.setText("");
+            JTextField4.setText("");
+            JTextField5.setText("");
+            JTextField6.setText("");
+            JTextField7.setText("");
+            JTextField9.setText("");
+            JTextField8.setText("");
+            JTextField10.setText("");
+            jComboBox1.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_LerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LerActionPerformed
-        txtField_nomeAgencia.setText(agencia_jframe.getNome()); 
-        txtField_endereco.setText(agencia_jframe.getEndereco()); 
-        txtField_numero.setText(agencia_jframe.getNumero());
-        txtField_complemento.setText(agencia_jframe.getComplemento()); 
-        txtField_bairro.setText(agencia_jframe.getBairro()); 
-        txtField_cidade.setText(agencia_jframe.getCidade()); 
-        txtField_cep.setText(agencia_jframe.getCep()); 
-        txtField_cnpj.setText(agencia_jframe.getCnpj()); 
-        txtField_gerente.setText(agencia_jframe.getGerente()); 
-        combo_uf.setSelectedItem(agencia_jframe.getUf());
+        JTextField2.setText(agencia_jframe.getNome()); 
+        JTextField3.setText(agencia_jframe.getEndereco()); 
+        JTextField4.setText(agencia_jframe.getNumero());
+        JTextField5.setText(agencia_jframe.getComplemento()); 
+        JTextField6.setText(agencia_jframe.getBairro()); 
+        JTextField7.setText(agencia_jframe.getCidade()); 
+        JTextField8.setText(agencia_jframe.getCep()); 
+        JTextField9.setText(agencia_jframe.getCnpj()); 
+        JTextField10.setText(agencia_jframe.getGerente()); 
+        jComboBox1.setSelectedItem(agencia_jframe.getUf());
     }//GEN-LAST:event_btn_LerActionPerformed
 
     private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
-       txtField_nomeAgencia.setText(""); 
-        txtField_endereco.setText(""); 
-        txtField_numero.setText("");
-        txtField_complemento.setText(""); 
-        txtField_bairro.setText(""); 
-        txtField_cidade.setText(""); 
-        txtField_cep.setText(""); 
-        txtField_cnpj.setText(""); 
-        txtField_gerente.setText(""); 
-        combo_uf.setSelectedIndex(0);
+       JTextField2.setText(""); 
+        JTextField3.setText(""); 
+        JTextField4.setText("");
+        JTextField5.setText(""); 
+        JTextField6.setText(""); 
+        JTextField7.setText(""); 
+        JTextField8.setText(""); 
+        JTextField9.setText(""); 
+        JTextField10.setText(""); 
+        jComboBox1.setSelectedIndex(0);
     }//GEN-LAST:event_btn_LimparActionPerformed
 
-    private void combo_ufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_ufActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_combo_ufActionPerformed
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void txtField_nomeAgencia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_nomeAgencia1ActionPerformed
+    private void JTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtField_nomeAgencia1ActionPerformed
+    }//GEN-LAST:event_JTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,30 +437,30 @@ public class Agencias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Gravar;
+    private javax.swing.JTextField JTextField1;
+    private javax.swing.JTextField JTextField10;
+    private javax.swing.JTextField JTextField2;
+    private javax.swing.JTextField JTextField3;
+    private javax.swing.JTextField JTextField4;
+    private javax.swing.JTextField JTextField5;
+    private javax.swing.JTextField JTextField6;
+    private javax.swing.JTextField JTextField7;
+    private javax.swing.JTextField JTextField8;
+    private javax.swing.JTextField JTextField9;
     private javax.swing.JButton btn_Ler;
     private javax.swing.JButton btn_Limpar;
-    private javax.swing.JComboBox<String> combo_uf;
-    private javax.swing.JLabel lbl_bairro;
-    private javax.swing.JLabel lbl_cep;
-    private javax.swing.JLabel lbl_cidade;
-    private javax.swing.JLabel lbl_cnpj;
-    private javax.swing.JLabel lbl_complemento;
-    private javax.swing.JLabel lbl_endereco;
-    private javax.swing.JLabel lbl_gerente;
-    private javax.swing.JLabel lbl_gerente1;
-    private javax.swing.JLabel lbl_nomeAgencia;
-    private javax.swing.JLabel lbl_nomeAgencia1;
-    private javax.swing.JLabel lbl_numero;
-    private javax.swing.JTextField txtField_bairro;
-    private javax.swing.JTextField txtField_cep;
-    private javax.swing.JTextField txtField_cidade;
-    private javax.swing.JTextField txtField_cnpj;
-    private javax.swing.JTextField txtField_complemento;
-    private javax.swing.JTextField txtField_endereco;
-    private javax.swing.JTextField txtField_gerente;
-    private javax.swing.JTextField txtField_nomeAgencia;
-    private javax.swing.JTextField txtField_nomeAgencia1;
-    private javax.swing.JTextField txtField_numero;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

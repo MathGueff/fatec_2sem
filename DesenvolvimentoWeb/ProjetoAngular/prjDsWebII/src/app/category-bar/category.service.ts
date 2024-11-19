@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
 export class CategoryService{
   constructor(private httpClient:HttpClient){}
   getList = () => {
-    const response = this.httpClient.get("https://apimocha.com/fatecangular/category");
+    const response = this.httpClient.get("https://apimocha.com/diretivasangular/category");
     return response;
   };
 }

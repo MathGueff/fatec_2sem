@@ -188,4 +188,19 @@ public class Agencia {
         gerente = gerente.trim();
         this.gerente = gerente;
     }
+    
+    public String dadosSQLValues(){
+        String dadosAgencia;
+        dadosAgencia = 
+            "'" + this.getNome() + "'," +
+            "'" + this.getEndereco() + "'," +  
+            "'" + this.getNumero() + "'," +
+            "'" + this.getComplemento() + "'," +
+            "'" + this.getBairro() + "'," +
+            "'" + this.getCidade() + "'," +
+            "'" + this.getUf() + "'," +
+            "'" + this.getCep() + "'," +
+            "'1111111111111'";
+        return dadosAgencia;        
+    }
 }

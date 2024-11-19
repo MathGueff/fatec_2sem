@@ -5,6 +5,7 @@
 package View;
 
 import DAO.Historico;
+import DAO.connectDAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,28 @@ public class CadHistorico extends javax.swing.JFrame {
      */
     public CadHistorico() {
         initComponents();
+    }
+    String operacaoAtivaGlobal = "Nenhum";
+    public CadHistorico(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(false);
+            jLabel2.setVisible(true);
+            jTextField1.setVisible(false);
+            jTextArea1.setVisible(true);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
+        operacao = "Alterar";
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(false);
+            jTextField1.setVisible(true);
+            jTextArea1.setVisible(false);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
     }
     
     Historico h = new Historico();
@@ -36,7 +59,7 @@ public class CadHistorico extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        btnGravar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         btnLer = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
 
@@ -50,10 +73,10 @@ public class CadHistorico extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        btnGravar.setText("Gravar");
-        btnGravar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Gravar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGravarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -91,7 +114,7 @@ public class CadHistorico extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnGravar)
+                        .addComponent(jButton1)
                         .addGap(83, 83, 83)
                         .addComponent(btnLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
@@ -111,7 +134,7 @@ public class CadHistorico extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGravar)
+                    .addComponent(jButton1)
                     .addComponent(btnLer)
                     .addComponent(btnLimpar))
                 .addContainerGap())
@@ -120,21 +143,27 @@ public class CadHistorico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         h.setId_his(jTextField1.getText().isBlank() || jTextField1.getText().isEmpty() ? 0 : Integer.parseInt(jTextField1.getText().trim()));
         h.setHistorico(jTextArea1.getText());
         JOptionPane.showMessageDialog(null, "Cadastrado");
-        btnLimparActionPerformed(evt);
-    }//GEN-LAST:event_btnGravarActionPerformed
+        
+        connectDAO objcon = new connectDAO();
+        objcon.connectDB();
+        objcon.insereRegistroJFBD("HISTORICOS", h.dadosSQLValues());
+
+        jTextField1.setText("");
+        jTextArea1.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        jTextArea1.setText("");
-        jTextField1.setText("");
+//        jTextArea1.setText("");
+//        jTextField1.setText("");
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnLerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLerActionPerformed
-        jTextField1.setText(Integer.toString(h.getId_his()));
-        jTextArea1.setText(h.getHistorico());
+//        jTextField1.setText(Integer.toString(h.getId_his()));
+//        jTextArea1.setText(h.getHistorico());
     }//GEN-LAST:event_btnLerActionPerformed
 
     /**
@@ -176,9 +205,9 @@ public class CadHistorico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGravar;
     private javax.swing.JButton btnLer;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

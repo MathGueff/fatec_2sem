@@ -1,0 +1,35 @@
+.card-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 0px auto 0;
+  border: 3px solid var(--cor-primaria);
+  transition: 0.4s all ease;
+}
+
+.card-img:hover{
+  border: 3px solid var(--cor-quaternaria);
+  transform: scale(0.9);
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img:hover{
+  cursor: pointer;
+}
+
+.card-info {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+a
+{
+  text-decoration: none;
+  color: var(--cor-quintenaria);
+}
