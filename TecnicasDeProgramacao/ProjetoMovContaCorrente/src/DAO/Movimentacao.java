@@ -73,7 +73,12 @@ public class Movimentacao {
             JOptionPane.showMessageDialog(null, "Digite o número de documento");
         }
         else{
-            this.documento = documento;
+            if(documento.length() < 6){  
+                this.documento = documento;
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Tamanho do documento inválido");
+            }
         }
     }
 
@@ -159,16 +164,15 @@ public class Movimentacao {
      public String dadosSQLValues(){
         String dadosMovimentacao;
         dadosMovimentacao = 
-            "'" + this.getNum_age()+ "'," +
-            "'" + this.getNum_conta()+ "'," +
-            "'" + this.getData_mov()+ "'," +
-            "'" + this.getNum_age()+ "'," +
-            "'" + this.getDocumento()+ "'," +
-            "'" + this.getCreditoDebito()+ "'," +
-            "'" + this.getId_his()+ "'," +
-            "'" + this.getCompl_hist()+ "'," +
-            "'" + this.getValor()+ "'," +
-            "'" + this.getSaldo()+ "'";
+            "'" + this.getNum_age()+ "'," + //Num agencia
+            "'" + this.getNum_conta()+ "'," + //Num conta
+            "'" + this.getData_mov()+ "'," + //Data
+            "'" + this.getDocumento()+ "'," + //Num doc
+            "'" + this.getCreditoDebito()+ "'," + //Debito_credito
+            "'" + this.getId_his()+ "'," + //id_his
+            "'" + this.getCompl_hist()+ "'," + //compl
+            "'" + this.getValor()+ "'," + //valor
+            "'" + this.getSaldo()+ "'"; //saldo
         return dadosMovimentacao;
     }
 }

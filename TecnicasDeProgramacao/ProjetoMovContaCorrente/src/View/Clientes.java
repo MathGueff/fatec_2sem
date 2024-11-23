@@ -451,7 +451,7 @@ public class Clientes extends javax.swing.JFrame {
         //Gravar os dados no objeto cliente c
         String operacao = "Incluir";
         if(operacaoAtivaGlobal.equals(operacao)){
-            c.setId_cli(JTextField1.getText().isBlank() || JTextField1.getText().isEmpty() ? 0 : Integer.parseInt(JTextField1.getText()));
+            //c.setId_cli(JTextField1.getText().isBlank() || JTextField1.getText().isEmpty() ? 0 : Integer.parseInt(JTextField1.getText()));
             c.setNome(JTextField2.getText());
             c.setEndereco(JTextField3.getText());
             c.setNumero(JTextField4.getText());

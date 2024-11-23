@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Cliente {
     
-    private int id_cli;
+    //private int id_cli;
     private String nome;
     private String cpf;
     private String endereco;
@@ -37,8 +37,8 @@ public class Cliente {
         //Construtor vazio para criação livre
     }
 
-    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento, String complemento) {
-        this.id_cli = id_cli;
+    public Cliente(String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento, String complemento) {
+        //this.id_cli = id_cli;
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -56,24 +56,24 @@ public class Cliente {
         this.complemento = complemento;
     }
     
-    public int getId_cli() {
-        return id_cli;
-    }
-
-    public void setId_cli(int id_cli) {
-        if(isStatus()){
-            if(id_cli == 0){
-                JOptionPane.showMessageDialog(null, "Digite um ID válido");
-            }
-            else
-            {
-                this.id_cli = id_cli;
-            }
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Para definir um ID a conta deve estar aberta");
-        }
-    }
+//    public int getId_cli() {
+//        return id_cli;
+//    }
+//
+//    public void setId_cli(int id_cli) {
+//        if(isStatus()){
+//            if(id_cli == 0){
+//                JOptionPane.showMessageDialog(null, "Digite um ID válido");
+//            }
+//            else
+//            {
+//                this.id_cli = id_cli;
+//            }
+//        }
+//        else{
+//            JOptionPane.showMessageDialog(null, "Para definir um ID a conta deve estar aberta");
+//        }
+//    }
     
     public String getComplemento() {
         return complemento;
@@ -417,21 +417,26 @@ public class Cliente {
     }
     
     public String dadosSQLValues(){
-        String dadosClientes;
-        dadosClientes = 
-            "'" + this.getNome()+ "'" + "," +
-            "'" + this.getEndereco()+ "'" + "," +
-            "'" + this.getNumero()+ "'" + "," +
-            "'" + this.getComplemento()+ "'" + "," +
-            "'" + this.getBairro()+ "'" + "," +
-            "'" + this.getCidade()+ "'" + "," +
-            "'" + this.getUf() + "'" + "," +
-            "'" + this.getCep()+ "'" + "," +
-            "'" + this.getTelefone()+ "'" + "," +
-            "'" + this.getCpf()+ "'" + "," +
-            "'" + this.getDataNascimento()+ "'" + "," +
-            "'" + this.getCnpj()+ "'";
+    String dadosClientes;
+    dadosClientes = 
+        getSqlValue(this.getNome()) + "," +
+        getSqlValue(this.getEndereco()) + "," +
+        getSqlValue(this.getNumero()) + "," +
+        getSqlValue(this.getComplemento()) + "," +
+        getSqlValue(this.getBairro()) + "," +
+        getSqlValue(this.getCidade()) + "," +
+        getSqlValue(this.getUf()) + "," +
+        getSqlValue(this.getCep()) + "," +
+        getSqlValue(this.getTelefone()) + "," +
+        getSqlValue(this.getCpf()) + "," +
+        getSqlValue(this.getDataNascimento()) + "," +
+        getSqlValue(this.getCnpj());
         return dadosClientes;
-                
+    }
+    
+    // Função auxiliar para verificar se o valor é nulo ou vazio
+    private String getSqlValue(String value) {
+        String campo = (value == null || value.isEmpty()) ? "NULL" : "'" + value + "'";
+        return campo;
     }
 }

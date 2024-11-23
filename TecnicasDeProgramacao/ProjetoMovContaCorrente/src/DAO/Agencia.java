@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author Alunos
  */
 public class Agencia {
-    private String num_agencia;
+    //private String num_agencia;
     private String nome;
     private String endereco;
     private String numero;
@@ -25,13 +25,14 @@ public class Agencia {
     private String cep;
     private String cnpj;
     private String gerente;
+    private String telefone;
     
     public Agencia(){
         //Construtor vazio para o objeto Agencia
     }
 
-    public Agencia(String num_agencia, String nome, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String cnpj, String gerente) {
-        this.num_agencia = num_agencia;
+    public Agencia(String nome, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String cnpj, String gerente, String telefone) {
+        //this.num_agencia = num_agencia;
         this.nome = nome;
         this.endereco = endereco;
         this.numero = numero;
@@ -42,22 +43,23 @@ public class Agencia {
         this.cep = cep;
         this.cnpj = cnpj;
         this.gerente = gerente;
+        this.telefone = telefone;
     }
 
-    public String getNum_agencia() {
-        return num_agencia;
-    }
-
-    public void setNum_agencia(String num_agencia) {
-        num_agencia = num_agencia.trim();
-        if(num_agencia.isBlank() || num_agencia.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, "Digite o número da agência");
-        }
-        else{
-            this.num_agencia = num_agencia;
-        }
-    }
+//    public String getNum_agencia() {
+//        return num_agencia;
+//    }
+//
+//    public void setNum_agencia(String num_agencia) {
+//        num_agencia = num_agencia.trim();
+//        if(num_agencia.isBlank() || num_agencia.isEmpty())
+//        {
+//            JOptionPane.showMessageDialog(null, "Digite o número da agência");
+//        }
+//        else{
+//            this.num_agencia = num_agencia;
+//        }
+//    }
 
     public String getNome() {
         return nome;
@@ -188,19 +190,43 @@ public class Agencia {
         gerente = gerente.trim();
         this.gerente = gerente;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        telefone = telefone.trim();
+        if(telefone.isBlank() || telefone.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite o telefone");
+        }
+        else if(telefone.length() == 11){
+            this.telefone = telefone;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Digite um telefone válido");
+        }
+        this.telefone = telefone;
+    }
     
     public String dadosSQLValues(){
         String dadosAgencia;
         dadosAgencia = 
-            "'" + this.getNome() + "'," +
-            "'" + this.getEndereco() + "'," +  
-            "'" + this.getNumero() + "'," +
-            "'" + this.getComplemento() + "'," +
-            "'" + this.getBairro() + "'," +
-            "'" + this.getCidade() + "'," +
-            "'" + this.getUf() + "'," +
-            "'" + this.getCep() + "'," +
-            "'1111111111111'";
+            getSqlValue(this.getNome()) + "," +
+            getSqlValue(this.getEndereco()) + "," +
+            getSqlValue(this.getNumero()) + "," +
+            getSqlValue(this.getComplemento()) + "," +
+            getSqlValue(this.getBairro()) + "," +
+            getSqlValue(this.getCidade()) + "," +
+            getSqlValue(this.getUf()) + "," +
+            getSqlValue(this.getCep()) + "," +
+            getSqlValue(this.getTelefone());
         return dadosAgencia;        
+    }
+    
+    // Função auxiliar para verificar se o valor é nulo ou vazio
+    private String getSqlValue(String value) {
+        String campo = (value == null || value.isEmpty()) ? "NULL" : "'" + value + "'";
+        return campo;
     }
 }

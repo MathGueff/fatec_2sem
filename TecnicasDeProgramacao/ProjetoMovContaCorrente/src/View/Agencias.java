@@ -35,8 +35,6 @@ public class Agencias extends javax.swing.JFrame {
             jLabel6.setVisible(true);
             jLabel7.setVisible(true);
             jLabel8.setVisible(true);
-            jLabel9.setVisible(true);
-            jLabel10.setVisible(true);
             jLabel11.setVisible(true);
             JTextField1.setVisible(false);
             JTextField2.setVisible(true);
@@ -46,9 +44,8 @@ public class Agencias extends javax.swing.JFrame {
             JTextField6.setVisible(true);
             JTextField7.setVisible(true);
             JTextField8.setVisible(true);
-            JTextField9.setVisible(true);
-            JTextField10.setVisible(true);
             jComboBox1.setVisible(true);
+            JTextField11.setVisible(true);
             jButton1.setText(operacaoAtivaGlobal + " BD");
         }
         operacao = "Alterar";
@@ -61,8 +58,7 @@ public class Agencias extends javax.swing.JFrame {
             jLabel6.setVisible(false);
             jLabel7.setVisible(false);
             jLabel8.setVisible(false);
-            jLabel9.setVisible(false);
-            jLabel10.setVisible(false);
+            jLabel12.setVisible(false);
             jLabel11.setVisible(false);
             JTextField1.setVisible(true);
             JTextField2.setVisible(false);
@@ -72,8 +68,7 @@ public class Agencias extends javax.swing.JFrame {
             JTextField6.setVisible(false);
             JTextField7.setVisible(false);
             JTextField8.setVisible(false);
-            JTextField9.setVisible(false);
-            JTextField10.setVisible(false);
+            JTextField11.setVisible(false);
             jComboBox1.setVisible(false);
             jButton1.setText(operacaoAtivaGlobal + " BD");;
         }
@@ -101,20 +96,18 @@ public class Agencias extends javax.swing.JFrame {
         JTextField6 = new javax.swing.JTextField();
         JTextField7 = new javax.swing.JTextField();
         JTextField8 = new javax.swing.JTextField();
-        JTextField9 = new javax.swing.JTextField();
-        JTextField10 = new javax.swing.JTextField();
         btn_Limpar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         JTextField1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        JTextField11 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -170,14 +163,6 @@ public class Agencias extends javax.swing.JFrame {
         JTextField8.setForeground(new java.awt.Color(51, 51, 51));
         JTextField8.setToolTipText("");
 
-        JTextField9.setBackground(new java.awt.Color(204, 204, 204));
-        JTextField9.setForeground(new java.awt.Color(51, 51, 51));
-        JTextField9.setToolTipText("");
-
-        JTextField10.setBackground(new java.awt.Color(204, 204, 204));
-        JTextField10.setForeground(new java.awt.Color(51, 51, 51));
-        JTextField10.setToolTipText("");
-
         btn_Limpar.setText("Limpar");
         btn_Limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,12 +184,6 @@ public class Agencias extends javax.swing.JFrame {
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("CEP da Agência");
-
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("CNPJ da Agência");
-
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Gerente da Agência");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         jComboBox1.setToolTipText("");
@@ -228,6 +207,13 @@ public class Agencias extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Telefone da Agência");
+
+        JTextField11.setBackground(new java.awt.Color(204, 204, 204));
+        JTextField11.setForeground(new java.awt.Color(51, 51, 51));
+        JTextField11.setToolTipText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -235,9 +221,6 @@ public class Agencias extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
@@ -254,24 +237,27 @@ public class Agencias extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(JTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(JTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(JTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,17 +296,13 @@ public class Agencias extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(btn_Limpar)
@@ -343,9 +325,10 @@ public class Agencias extends javax.swing.JFrame {
         agencia_jframe.setBairro(JTextField6.getText());
         agencia_jframe.setCidade(JTextField7.getText());
         agencia_jframe.setCep(JTextField8.getText());
-        agencia_jframe.setCnpj(JTextField9.getText());
-        agencia_jframe.setGerente(JTextField10.getText());
+        //agencia_jframe.setCnpj(JTextField9.getText());
+        //agencia_jframe.setGerente(JTextField10.getText());
         agencia_jframe.setUf(jComboBox1.getSelectedItem().toString());
+        agencia_jframe.setTelefone(JTextField11.getText());
         JOptionPane.showMessageDialog(null, "Cadastrado ");
          //Inserção no banco de dados
             connectDAO objcon = new connectDAO();
@@ -358,36 +341,37 @@ public class Agencias extends javax.swing.JFrame {
             JTextField5.setText("");
             JTextField6.setText("");
             JTextField7.setText("");
-            JTextField9.setText("");
+            //JTextField9.setText("");
             JTextField8.setText("");
-            JTextField10.setText("");
+            //JTextField10.setText("");
+            JTextField11.setText("");
             jComboBox1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_LerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LerActionPerformed
-        JTextField2.setText(agencia_jframe.getNome()); 
-        JTextField3.setText(agencia_jframe.getEndereco()); 
-        JTextField4.setText(agencia_jframe.getNumero());
-        JTextField5.setText(agencia_jframe.getComplemento()); 
-        JTextField6.setText(agencia_jframe.getBairro()); 
-        JTextField7.setText(agencia_jframe.getCidade()); 
-        JTextField8.setText(agencia_jframe.getCep()); 
-        JTextField9.setText(agencia_jframe.getCnpj()); 
-        JTextField10.setText(agencia_jframe.getGerente()); 
-        jComboBox1.setSelectedItem(agencia_jframe.getUf());
+//        JTextField2.setText(agencia_jframe.getNome()); 
+//        JTextField3.setText(agencia_jframe.getEndereco()); 
+//        JTextField4.setText(agencia_jframe.getNumero());
+//        JTextField5.setText(agencia_jframe.getComplemento()); 
+//        JTextField6.setText(agencia_jframe.getBairro()); 
+//        JTextField7.setText(agencia_jframe.getCidade()); 
+//        JTextField8.setText(agencia_jframe.getCep()); 
+//        JTextField9.setText(agencia_jframe.getCnpj()); 
+//        JTextField10.setText(agencia_jframe.getGerente()); 
+//        jComboBox1.setSelectedItem(agencia_jframe.getUf());
     }//GEN-LAST:event_btn_LerActionPerformed
 
     private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
-       JTextField2.setText(""); 
-        JTextField3.setText(""); 
-        JTextField4.setText("");
-        JTextField5.setText(""); 
-        JTextField6.setText(""); 
-        JTextField7.setText(""); 
-        JTextField8.setText(""); 
-        JTextField9.setText(""); 
-        JTextField10.setText(""); 
-        jComboBox1.setSelectedIndex(0);
+//       JTextField2.setText(""); 
+//        JTextField3.setText(""); 
+//        JTextField4.setText("");
+//        JTextField5.setText(""); 
+//        JTextField6.setText(""); 
+//        JTextField7.setText(""); 
+//        JTextField8.setText(""); 
+//        JTextField9.setText(""); 
+//        JTextField10.setText(""); 
+//        jComboBox1.setSelectedIndex(0);
     }//GEN-LAST:event_btn_LimparActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -438,7 +422,7 @@ public class Agencias extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTextField1;
-    private javax.swing.JTextField JTextField10;
+    private javax.swing.JTextField JTextField11;
     private javax.swing.JTextField JTextField2;
     private javax.swing.JTextField JTextField3;
     private javax.swing.JTextField JTextField4;
@@ -446,14 +430,13 @@ public class Agencias extends javax.swing.JFrame {
     private javax.swing.JTextField JTextField6;
     private javax.swing.JTextField JTextField7;
     private javax.swing.JTextField JTextField8;
-    private javax.swing.JTextField JTextField9;
     private javax.swing.JButton btn_Ler;
     private javax.swing.JButton btn_Limpar;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -461,6 +444,5 @@ public class Agencias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

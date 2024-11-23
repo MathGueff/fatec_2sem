@@ -16,7 +16,7 @@ public class Usuario {
     private int id_cli;
     private int num_agencia;
     
-    public Usuario(String login, String senha, int id_cli, int num_agencia){
+    public Usuario(String login, String senha,int id_cli, int num_agencia){
         this.login = login;
         this.senha = senha;
         this.id_cli = id_cli;
