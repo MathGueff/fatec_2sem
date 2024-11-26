@@ -144,7 +144,7 @@ public class CadHistorico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        h.setId_his(jTextField1.getText().isBlank() || jTextField1.getText().isEmpty() ? 0 : Integer.parseInt(jTextField1.getText().trim()));
+        //h.setId_his(jTextField1.getText().isBlank() || jTextField1.getText().isEmpty() ? 0 : Integer.parseInt(jTextField1.getText().trim()));
         h.setHistorico(jTextArea1.getText());
         JOptionPane.showMessageDialog(null, "Cadastrado");
         
@@ -152,7 +152,7 @@ public class CadHistorico extends javax.swing.JFrame {
         objcon.connectDB();
         objcon.insereRegistroJFBD("HISTORICOS", h.dadosSQLValues());
 
-        jTextField1.setText("");
+        //jTextField1.setText("");
         jTextArea1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 

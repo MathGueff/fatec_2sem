@@ -89,9 +89,15 @@ public class ContaCorrente{
     public String dadosSQLValues(){
         String dadosContaCorrente;
         dadosContaCorrente = 
-            "'" + this.getNum_agencia()+ "'," +
-            "'" + this.getId_cli()+ "'," +   
-            "'" + this.getSaldo()+ "'";
+            getSqlValue(this.getNum_agencia()) + "," +
+            getSqlValue(Integer.toString(getId_cli())) + "," +
+            getSqlValue(Double.toString(getSaldo()));
         return dadosContaCorrente;        
+    }
+    
+    // Função auxiliar para verificar se o valor é nulo ou vazio
+    private String getSqlValue(String value) {
+        String campo = (value == null || value.isEmpty()) ? "NULL" : "'" + value + "'";
+        return campo;
     }
 }

@@ -55,7 +55,13 @@ public class Historico {
     public String dadosSQLValues(){
         String dadosHistorico;
         dadosHistorico = 
-            "'" + this.getHistorico()+ "'";
+            getSqlValue(getHistorico());
         return dadosHistorico;
+    }
+    
+    // Função auxiliar para verificar se o valor é nulo ou vazio
+    private String getSqlValue(String value) {
+        String campo = (value == null || value.isEmpty()) ? "NULL" : "'" + value + "'";
+        return campo;
     }
 }

@@ -5,6 +5,7 @@
 package View;
 
 import DAO.Usuario;
+import DAO.connectDAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,38 @@ public class Usuarios extends javax.swing.JFrame {
      */
     public Usuarios() {
         initComponents();
+    }
+    
+    String operacaoAtivaGlobal = "Nenhum";
+    
+    public Usuarios(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jTextField1.setVisible(false);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jLabel1.setVisible(false);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jButton1.setText(operacaoAtivaGlobal + " BD");
+        }
+        operacao = "Alterar";
+        if(operacaoAtiva.equals(operacao)){
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jButton1.setText(operacaoAtivaGlobal + " BD");;
+        }
     }
 
     Usuario u = new Usuario();
@@ -33,34 +66,35 @@ public class Usuarios extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        btn_gravar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         btn_limpar = new javax.swing.JButton();
         btn_ler = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Id do Cliente");
+        jLabel1.setText("Id do Usuário");
 
-        jLabel2.setText("Login");
+        jLabel3.setText("Número da Agência");
 
-        jLabel3.setText("Senha");
+        jLabel2.setText("Senha");
 
-        jLabel4.setText("Número da Agência");
+        jLabel4.setText("Número da Conta Corrente");
 
-        btn_gravar.setText("Gravar");
-        btn_gravar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Gravar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_gravarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
         btn_limpar.setText("Limpar");
+        btn_limpar.setEnabled(false);
         btn_limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_limparActionPerformed(evt);
@@ -68,6 +102,7 @@ public class Usuarios extends javax.swing.JFrame {
         });
 
         btn_ler.setText("Ler");
+        btn_ler.setEnabled(false);
         btn_ler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_lerActionPerformed(evt);
@@ -79,33 +114,34 @@ public class Usuarios extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(120, 120, 120)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(47, 47, 47)
-                        .addComponent(jTextField4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_gravar)
+                .addComponent(jButton1)
                 .addGap(66, 66, 66)
                 .addComponent(btn_limpar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_ler)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +164,7 @@ public class Usuarios extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_gravar)
+                    .addComponent(jButton1)
                     .addComponent(btn_limpar)
                     .addComponent(btn_ler))
                 .addContainerGap())
@@ -137,26 +173,30 @@ public class Usuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_gravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gravarActionPerformed
-        u.setId_cli(jTextField1.getText().isBlank() || jTextField1.getText().isEmpty() ? 0 : Integer.parseInt(jTextField1.getText().trim()));
-        u.setLogin(jTextField2.getText());
-        u.setSenha(jTextField3.getText());
-        u.setNum_agencia(jTextField4.getText().isBlank() || jTextField4.getText().isEmpty() ? 0 : Integer.parseInt(jTextField4.getText().trim()));
-        JOptionPane.showMessageDialog(null, "Cadastrado");
-        btn_limparActionPerformed(evt);
-    }//GEN-LAST:event_btn_gravarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        u.setSenha(jTextField2.getText());
+        u.setNum_agencia(Integer.parseInt(jTextField3.getText()));
+        u.setNum_cc(Integer.parseInt(jTextField4.getText()));
+        
+        connectDAO objcon = new connectDAO();
+        objcon.connectDB();
+        objcon.insereRegistroJFBD("USUARIOS", u.dadosSQLValues());
+        
+        jTextField3.setText("");
+        jTextField2.setText("");
+        jTextField4.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparActionPerformed
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
+//        jTextField1.setText("");
+//        jTextField3.setText("");
+//        jTextField2.setText("");
+//        jTextField4.setText("");
     }//GEN-LAST:event_btn_limparActionPerformed
 
     private void btn_lerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lerActionPerformed
-        jTextField1.setText(Integer.toString(u.getId_cli()));
-        jTextField2.setText(u.getLogin());
-        jTextField3.setText(u.getSenha());
+        jTextField1.setText(Integer.toString(u.getIdUsuario()));
+        jTextField2.setText(u.getSenha());
         jTextField4.setText(Integer.toString(u.getNum_agencia()));
     }//GEN-LAST:event_btn_lerActionPerformed
 
@@ -199,9 +239,9 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_gravar;
     private javax.swing.JButton btn_ler;
     private javax.swing.JButton btn_limpar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

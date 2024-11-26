@@ -73,7 +73,7 @@ public class Movimentacao {
             JOptionPane.showMessageDialog(null, "Digite o número de documento");
         }
         else{
-            if(documento.length() < 6){  
+            if(documento.length() <= 6){  
                 this.documento = documento;
             }
             else{
@@ -164,15 +164,21 @@ public class Movimentacao {
      public String dadosSQLValues(){
         String dadosMovimentacao;
         dadosMovimentacao = 
-            "'" + this.getNum_age()+ "'," + //Num agencia
-            "'" + this.getNum_conta()+ "'," + //Num conta
-            "'" + this.getData_mov()+ "'," + //Data
-            "'" + this.getDocumento()+ "'," + //Num doc
-            "'" + this.getCreditoDebito()+ "'," + //Debito_credito
-            "'" + this.getId_his()+ "'," + //id_his
-            "'" + this.getCompl_hist()+ "'," + //compl
-            "'" + this.getValor()+ "'," + //valor
-            "'" + this.getSaldo()+ "'"; //saldo
+            getSqlValue(getNum_age()) + "," +
+            getSqlValue(getNum_conta()) + "," + //Num conta
+            getSqlValue(getData_mov()) + "," + //Data
+            getSqlValue(getDocumento())+ "," + //Num doc
+            getSqlValue(getCreditoDebito()) + "," + //Debito_credito
+            getSqlValue(Integer.toString(getId_his())) + "," + //id_his
+            getSqlValue(getCompl_hist()) + "," + //compl
+            getSqlValue(Double.toString(getValor())) + "," +
+            getSqlValue(Double.toString(getSaldo())); //s"aldo
         return dadosMovimentacao;
+    }
+     
+    // Função auxiliar para verificar se o valor é nulo ou vazio
+    private String getSqlValue(String value) {
+        String campo = (value == null || value.isEmpty()) ? "NULL" : "'" + value + "'";
+        return campo;
     }
 }

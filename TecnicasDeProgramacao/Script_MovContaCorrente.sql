@@ -77,3 +77,4 @@ select * from AGENCIAS
 select * from CONTACORRENTE
 select * from HISTORICOS
 select * from MOVIMENTACAO
+select * from USUARIOS

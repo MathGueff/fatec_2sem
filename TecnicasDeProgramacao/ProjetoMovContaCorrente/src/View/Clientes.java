@@ -35,7 +35,7 @@ public class Clientes extends javax.swing.JFrame {
             jLabel8.setVisible(true);
             jLabel9.setVisible(true);
             jLabel10.setVisible(true);
-            jLabel11.setVisible(true);
+            //jLabel11.setVisible(true);
             jLabel12.setVisible(true);
             jLabel13.setVisible(true);
             jLabel14.setVisible(true);
@@ -52,8 +52,8 @@ public class Clientes extends javax.swing.JFrame {
             JTextField11.setVisible(true);
             JTextField12.setVisible(true);
             JComboBox.setVisible(true);
-            JRadioButton1.setVisible(true);
-            JRadioButton2.setVisible(true);
+            //JRadioButton1.setVisible(true);
+            //JRadioButton2.setVisible(true);
             jButton1.setText(operacaoAtivaGlobal + " BD");
         }
         operacao = "Alterar";
@@ -68,7 +68,7 @@ public class Clientes extends javax.swing.JFrame {
             jLabel8.setVisible(false);
             jLabel9.setVisible(false);
             jLabel10.setVisible(false);
-            jLabel11.setVisible(false);
+            //jLabel11.setVisible(false);
             jLabel12.setVisible(false);
             jLabel13.setVisible(false);
             jLabel14.setVisible(false);
@@ -85,8 +85,8 @@ public class Clientes extends javax.swing.JFrame {
             JTextField11.setVisible(false);
             JTextField12.setVisible(false);
             JComboBox.setVisible(false);
-            JRadioButton1.setVisible(false);
-            JRadioButton2.setVisible(false);
+            //JRadioButton1.setVisible(false);
+            //JRadioButton2.setVisible(false);
             jButton1.setText(operacaoAtivaGlobal + " BD");;
         }
     }
@@ -125,11 +125,8 @@ public class Clientes extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         JTextField10 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         JComboBox = new javax.swing.JComboBox<>();
-        JRadioButton1 = new javax.swing.JRadioButton();
-        JRadioButton2 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         JTextField1 = new javax.swing.JTextField();
         JTextField11 = new javax.swing.JTextField();
@@ -222,27 +219,10 @@ public class Clientes extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Sexo");
-
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Estado do Cliente");
 
         JComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-
-        JRadioButton1.setText("Feminino");
-        JRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        JRadioButton2.setText("Masculino");
-        JRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRadioButton2ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Id do Cliente");
@@ -285,13 +265,7 @@ public class Clientes extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(26, 26, 26)
-                                    .addComponent(jLabel11)
-                                    .addGap(86, 86, 86)
-                                    .addComponent(JRadioButton1)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(JRadioButton2))
+                                    .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -316,7 +290,7 @@ public class Clientes extends javax.swing.JFrame {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(JTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(33, 33, 33))
+                            .addGap(115, 115, 115))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
@@ -360,13 +334,7 @@ public class Clientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel11))
-                            .addComponent(JRadioButton1)
-                            .addComponent(JRadioButton2)))
+                        .addComponent(JTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jLabel2)))
@@ -474,13 +442,10 @@ public class Clientes extends javax.swing.JFrame {
                     c.setCnpj(JTextField10.getText());
                     identificacao = "cnpj";
                     break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Digite o CPF ou CNPJ");
             }
             if(JComboBox.getSelectedItem().toString() != "ESTADO"){
                 c.setUf(JComboBox.getSelectedItem().toString());
             }
-            c.setSexo(sexoSelecionado);
             JOptionPane.showMessageDialog(null, "Cadastrado");
             
             //Inserção no banco de dados
@@ -500,8 +465,8 @@ public class Clientes extends javax.swing.JFrame {
             JTextField11.setText("");
             JTextField12.setText("");
             JComboBox.setSelectedIndex(0);
-            JRadioButton1.setSelected(false);
-            JRadioButton2.setSelected(false);
+            //JRadioButton1.setSelected(false);
+            //JRadioButton2.setSelected(false);
             sexoSelecionado = ' ';
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -554,22 +519,6 @@ public class Clientes extends javax.swing.JFrame {
 //        sexoSelecionado = ' ';
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void JRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRadioButton1ActionPerformed
-       if(JRadioButton1.isSelected())
-       {
-           JRadioButton2.setSelected(false);
-           sexoSelecionado = 'F';
-       }
-    }//GEN-LAST:event_JRadioButton1ActionPerformed
-
-    private void JRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRadioButton2ActionPerformed
-       if(JRadioButton2.isSelected())
-       {
-           JRadioButton1.setSelected(false);
-           sexoSelecionado = 'M';
-       }
-    }//GEN-LAST:event_JRadioButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -608,8 +557,6 @@ public class Clientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> JComboBox;
-    private javax.swing.JRadioButton JRadioButton1;
-    private javax.swing.JRadioButton JRadioButton2;
     private javax.swing.JTextField JTextField1;
     private javax.swing.JTextField JTextField10;
     private javax.swing.JTextField JTextField11;
@@ -627,7 +574,6 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

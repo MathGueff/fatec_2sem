@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Cliente {
     
-    //private int id_cli;
+    private int id_cli;
     private String nome;
     private String cpf;
     private String endereco;
@@ -37,8 +37,8 @@ public class Cliente {
         //Construtor vazio para criação livre
     }
 
-    public Cliente(String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento, String complemento) {
-        //this.id_cli = id_cli;
+    public Cliente(int id_cli, String nome, String cpf, String endereco, String numero, String bairro, String cidade, String uf, String cep, String email, String telefone, String cnpj, char sexo, String dataNascimento, String complemento) {
+        this.id_cli = id_cli;
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -52,28 +52,28 @@ public class Cliente {
         this.cnpj = cnpj;
         this.sexo = sexo;
         this.status = true;
-        this.DataNascimento = "2022-10-11";
+        this.DataNascimento = dataNascimento;
         this.complemento = complemento;
     }
     
-//    public int getId_cli() {
-//        return id_cli;
-//    }
-//
-//    public void setId_cli(int id_cli) {
-//        if(isStatus()){
-//            if(id_cli == 0){
-//                JOptionPane.showMessageDialog(null, "Digite um ID válido");
-//            }
-//            else
-//            {
-//                this.id_cli = id_cli;
-//            }
-//        }
-//        else{
-//            JOptionPane.showMessageDialog(null, "Para definir um ID a conta deve estar aberta");
-//        }
-//    }
+    public int getId_cli() {
+        return id_cli;
+    }
+
+    public void setId_cli(int id_cli) {
+        if(isStatus()){
+            if(id_cli <= 0){
+                JOptionPane.showMessageDialog(null, "Digite um ID válido");
+            }
+            else
+            {
+                this.id_cli = id_cli;
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para definir um ID a conta deve estar aberta");
+        }
+    }
     
     public String getComplemento() {
         return complemento;
@@ -85,12 +85,8 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(complemento.isBlank() || complemento.isEmpty())
+            if(!complemento.isBlank() && !complemento.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Digite seu nome");
-            }
-            else
-            { 
                 this.complemento = complemento;
             }
             /*
@@ -98,7 +94,7 @@ public class Cliente {
             */
         }
         else{
-            JOptionPane.showMessageDialog(null, "Para definir o nome a conta deve estar aberta");
+            JOptionPane.showMessageDialog(null, "Para definir o complemento a conta deve estar aberta");
         }
     }
 
@@ -112,12 +108,8 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(DataNascimento.isBlank() || DataNascimento.isEmpty())
+            if(!DataNascimento.isBlank() && !DataNascimento.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Digite seu nome");
-            }
-            else
-            { 
                 this.DataNascimento = DataNascimento;
             }
             /*
@@ -194,10 +186,19 @@ public class Cliente {
     public void setNumero(String numero) {
         numero = numero.trim();
         if(isStatus()){
-            this.numero = numero;
+            /*
+                Validação do campo
+            */
+            if(!numero.isBlank() && !numero.isEmpty())
+            {
+                this.numero = numero;
+            }
+            /*
+                Fim da validação do campo
+            */
         }
         else{
-            JOptionPane.showMessageDialog(null, "Para definir o numero a conta deve estar aberta");
+            JOptionPane.showMessageDialog(null, "Para definir o número a conta deve estar aberta");
         }
     }
 
@@ -207,7 +208,16 @@ public class Cliente {
 
     public void setBairro(String bairro) {
         if(isStatus()){
-            this.bairro = bairro;
+            /*
+                Validação do campo
+            */
+            if(!bairro.isBlank() && !bairro.isEmpty())
+            {
+                this.bairro = bairro;
+            }
+            /*
+                Fim da validação do campo
+            */
         }
         else{
             JOptionPane.showMessageDialog(null, "Para definir o bairro a conta deve estar aberta");
@@ -330,17 +340,15 @@ public class Cliente {
             /*
                 Validação do campo
             */
-            if(telefone.isBlank() || telefone.isEmpty())
+            if(!telefone.isBlank() && !telefone.isEmpty())
             {
-                JOptionPane.showMessageDialog(null, "Digite seu telefone");
-            }
-            else if(telefone.length() != 11)
-            {
-                JOptionPane.showMessageDialog(null, "Tamanho de telefone inválido");
-            }
-            else
-            { 
-                this.telefone = telefone;
+                if(telefone.length() != 11)
+                {
+                    JOptionPane.showMessageDialog(null, "Tamanho de telefone inválido");
+                }
+                else{
+                    this.telefone = telefone;
+                }
             }
             /*
                 Fim da validação do campo
@@ -358,20 +366,18 @@ public class Cliente {
     public void setCpf(String cpf) {
         cpf = cpf.trim();
         if(isStatus()){
-            if(cpf.isBlank() || cpf.isEmpty()){
-                JOptionPane.showMessageDialog(null, "Digite um CPF");
-            }
-            else if(AtrValidator.isCPF(cpf)){
-                this.cpf = cpf;
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Digite um CPF válido");
+            if(!cpf.isBlank() && !cpf.isEmpty()){
+               if(AtrValidator.isCPF(cpf)){
+                    this.cpf = cpf;
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Digite um CPF válido");
+                } 
             }
         }
         else{
             JOptionPane.showMessageDialog(null, "Para definir o CPF a conta deve estar aberta");
         }
-        
     }
 
     public String getCnpj() {
@@ -381,38 +387,17 @@ public class Cliente {
     public void setCnpj(String cnpj) {
         cnpj = cnpj.trim();
         if(isStatus()){
-            if(cnpj.isBlank() || cnpj.isEmpty()){
-                JOptionPane.showMessageDialog(null, "Digite o CNPJ");
-            }
-            else if(AtrValidator.isCNPJ(cnpj)){
-                this.cnpj = cnpj;
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Digite um CNPJ válido");
+            if(!cnpj.isBlank() && !cnpj.isEmpty()){
+               if(AtrValidator.isCNPJ(cnpj)){
+                    this.cnpj = cnpj;
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Digite um CNPJ válido");
+                } 
             }
         }
         else{
             JOptionPane.showMessageDialog(null, "Para definir o CNPJ a conta deve estar aberta");
-        }
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        if(isStatus()){
-            if(sexo == 'F' || sexo == 'M')
-            {
-                this.sexo = sexo;
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Escolha um sexo");
-            }
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Para definir o sexo a conta deve estar aberta");
         }
     }
     

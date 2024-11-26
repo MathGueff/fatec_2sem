@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author Alunos
  */
 public class Agencia {
-    //private String num_agencia;
+    private String num_agencia;
     private String nome;
     private String endereco;
     private String numero;
@@ -23,16 +23,14 @@ public class Agencia {
     private String cidade;
     private String uf;
     private String cep;
-    private String cnpj;
-    private String gerente;
     private String telefone;
     
     public Agencia(){
         //Construtor vazio para o objeto Agencia
     }
 
-    public Agencia(String nome, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String cnpj, String gerente, String telefone) {
-        //this.num_agencia = num_agencia;
+    public Agencia(String num_agencia, String nome, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String telefone) {
+        this.num_agencia = num_agencia;
         this.nome = nome;
         this.endereco = endereco;
         this.numero = numero;
@@ -41,25 +39,23 @@ public class Agencia {
         this.cidade = cidade;
         this.uf = uf;
         this.cep = cep;
-        this.cnpj = cnpj;
-        this.gerente = gerente;
         this.telefone = telefone;
     }
 
-//    public String getNum_agencia() {
-//        return num_agencia;
-//    }
-//
-//    public void setNum_agencia(String num_agencia) {
-//        num_agencia = num_agencia.trim();
-//        if(num_agencia.isBlank() || num_agencia.isEmpty())
-//        {
-//            JOptionPane.showMessageDialog(null, "Digite o número da agência");
-//        }
-//        else{
-//            this.num_agencia = num_agencia;
-//        }
-//    }
+    public String getNum_agencia() {
+        return num_agencia;
+    }
+
+    public void setNum_agencia(String num_agencia) {
+        num_agencia = num_agencia.trim();
+        if(num_agencia.isBlank() || num_agencia.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Digite o número da agência");
+        }
+        else{
+            this.num_agencia = num_agencia;
+        }
+    }
 
     public String getNome() {
         return nome;
@@ -163,32 +159,6 @@ public class Agencia {
         else{
             this.cep = cep;
         }
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        cnpj = cnpj.trim();
-        if(cnpj.isBlank() || cnpj.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Digite o CNPJ");
-        }
-        else if(AtrValidator.isCNPJ(cnpj)){
-            this.cnpj = cnpj;
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Digite um CNPJ válido");
-        }
-    }
-
-    public String getGerente() {
-        return gerente;
-    }
-
-    public void setGerente(String gerente) {
-        gerente = gerente.trim();
-        this.gerente = gerente;
     }
 
     public String getTelefone() {

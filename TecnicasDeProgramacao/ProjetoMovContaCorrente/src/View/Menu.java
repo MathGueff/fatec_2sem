@@ -219,7 +219,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Usuarios acesso_usuario = new Usuarios();
+        String operacao = "Incluir";
+        Usuarios acesso_usuario = new Usuarios(operacao);
         acesso_usuario.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 

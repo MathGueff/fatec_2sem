@@ -169,7 +169,7 @@ public class CadContaCorrente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cc.setNum_conta(jTextField1.getText());
+        //cc.setNum_conta(jTextField1.getText());
         cc.setNum_agencia(jTextField2.getText());
         cc.setId_cli(jTextField3.getText().isEmpty() || jTextField3.getText().isBlank()? 0 : Integer.parseInt(jTextField3.getText().trim()));
         cc.setSaldo(jTextField4.getText().isEmpty() || jTextField4.getText().isBlank() ? 0 : Double.parseDouble(jTextField4.getText().trim()));
@@ -179,7 +179,7 @@ public class CadContaCorrente extends javax.swing.JFrame {
         objcon.connectDB();
         objcon.insereRegistroJFBD("CONTACORRENTE", cc.dadosSQLValues());
 
-        jTextField1.setText("");
+        //jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jTextField4.setText("");
